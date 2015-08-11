@@ -1,0 +1,1 @@
+jQuery(function($){$(".nav-toggle").click(function(){$("#nav-container").toggleClass("show"),$(".mobile").toggleClass("icon-menu"),$(".mobile").toggleClass("icon-cancel")})});
