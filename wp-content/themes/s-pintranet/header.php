@@ -11,22 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="MSSmartTagsPreventParsing" content="true" />
-    <title><?php
-    if(!is_front_page()){
-        if(is_search()){
-            echo 'Search';
-        }else{
-            the_title();
-        }
-        echo ' | ';
-    }
-    bloginfo('name');
-    ?></title>
-<link type="text/css" rel="stylesheet" media="all" href="<? bloginfo('url') ?>/ui/css/style.css" />
+    <title><?php wp_title(); ?></title>
     <link type="text/plain" rel="author" href="<? bloginfo('url') ?>/authors.txt" />
     <link type="image/x-icon" rel="shortcut icon" href="<? bloginfo('url') ?>/favicon.png" />
-    <script src="<? bloginfo('url') ?>/ui/js/modernizr.js"></script>
-    <script src="<? bloginfo('url') ?>/ui/js/jquery.js" type="text/javascript"></script>
     <?php
 		if ( is_user_logged_in() ) {
 
@@ -34,7 +21,8 @@
 			wp_redirect( 'http://employees.spconinc.com/wp-login.php', 301 );
 		exit;
 		}
-	?>
+	wp_head();
+    ?>
 </head>
 <body>
     <!--[if lte IE 7]><iframe src="unsupported.html" frameborder="0" scrolling="no" id="no_ie6"></iframe><![endif]-->
