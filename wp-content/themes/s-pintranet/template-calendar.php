@@ -32,17 +32,33 @@
             <div class="calleft">
 
                 <?php
-                query_posts('post_type=event&posts_per_page=4&post_status=future');
+                query_posts(array(
+                    'post_type' => array('event'),
+                    'orderby' => 'meta_value',
+                    'meta_key' => '_event_start_date',
+                    'order' => 'ASC'
+                ));
                 if(have_posts()){ while(have_posts()){ the_post();
-                    printr($post);
+                    $cst = get_post_custom();
+                    $date = strtoupper(date('F j, Y', strtotime($cst['_event_start_date'][0])));
+                    $cat = get_the_terms($post->ID,'event-categories');
+                    if(in_array($cat[0]->term_id,array(20,21))){
+                        $pro = get_field('user_profile');
+                        $link = get_permalink($pro);
+                        $linkText = 'View Profile';
+                    }else{
+                        $link = get_permalink();
+                        $linkText = 'Read More';
+                    }
+                    $catName = $cat[0]->name;
                     ?>
                 	<div class="event">
-                    	<h4 class="company-event uppercase">Company Event</h4>
-                        <h4 class="uppercase">OCTOBER 2, 2015   |   Braintree, MA</h4>
+                    	<h4 class="company-event uppercase"><?php echo $catName; ?></h4>
+                        <h4 class="uppercase"><?php echo $date ?>   |   Braintree, MA</h4>
                         <h2><?php the_title(); ?></h2>
-                        <?php the_excerpt(); ?>
+                        <p><?php the_excerpt(); ?></p>
                         <ul>
-    						<li><a href="<?php the_permalink() ?>" class="calmore">Read More</a></li>
+    						<li><a href="<?php echo $link ?>" class="calmore"><?php echo $linkText; ?></a></li>
     						<li><a href="#" class="exmore">Register</a></li>
     						<li><a href="#" class="exmore">Add to Calendar</a></li>
     						<li><a href="#" class="exmore">Contact</a></li>
@@ -50,6 +66,7 @@
     				</div>
                 <?php }} wp_reset_query(); ?>
 				<a href="#" class="exmore">Load more events</a>
+                <?php printr(get_post(168)) ?>
             </div>
 		</div>
 	</div>
