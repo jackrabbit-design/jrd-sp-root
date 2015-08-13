@@ -708,11 +708,11 @@ input[type=submit]:hover, button:hover {  }
 	.caloption .exmore:hover {color:#0A5385}
 
 
-	.em-calendar {border: 1px solid #DEDEDE; width:90%;}
+	.em-calendar {border: 1px solid #DEDEDE; width:100%;}
 	.em-calendar tr:nth-child(even) {background-color: #fff;}
-	.em-calendar thead tr td {font-family: Crimson-Roman; background: #0A5385; font-size: 26px; color: #FFFFFF; line-height: 30px; height:60px; vertical-align: middle; position: relative;}
+	.em-calendar thead tr td {font-family: Crimson-Roman; background: #0A5385; font-size: 26px; color: #FFFFFF; line-height: 30px; height:60px; vertical-align: middle; position: relative; text-transform: uppercase; }
 
-	.leftbtn {transform: rotate(180deg); left: 95px;  top: 13px; position: absolute;}
+	.leftbtn {transform: rotate(180deg); left: 95px;  top: 9px; position: absolute;}
 	.leftbtn img:last-child{display:none}
 	.leftbtn:hover img:first-child{display:none}
 	.leftbtn:hover img:last-child{display:inline-block}
@@ -724,9 +724,9 @@ input[type=submit]:hover, button:hover {  }
 	.days-names td {font-weight:600; text-align: center; padding:10px 0; text-transform: uppercase; font-size: 13px; color: #0A5385; letter-spacing: 0.51px; line-height: 24px;}
 	.days-names ~ tr td { opacity: 0.5; font-size: 13px; color: #7B7B7B; letter-spacing: 0.51px; line-height: 24px; text-align: center; padding:10px 0; font-weight:500;}
 	.days-names ~ tr .eventless-today,
-		.days-names ~ tr .eventful-today {opacity: 1; background:url('../images/daybg.png') no-repeat 14px 8px; color:#fff !important;}
+		.days-names ~ tr .eventful-today {opacity: 1; background:url('../images/daybg.png') no-repeat 13px 8px; color:#fff !important;}
 	.days-names ~ tr .eventless-today:hover,
-		.days-names ~ tr .eventful-today:hover {background:url('../images/daybghover.png') no-repeat 14px 8px;}
+		.days-names ~ tr .eventful-today:hover {background:url('../images/daybghover.png') no-repeat 13px 8px;}
 	.days-names ~ tr .eventful {opacity:1;}
 	table.fullcalendar td { text-align:center; border:none; }
 	table.em-calendar td.eventless-today, table.em-calendar td.eventful-today { background-color:transparent; }
@@ -747,6 +747,10 @@ input[type=submit]:hover, button:hover {  }
 	.eventful ul li.jrdevent.anniversary { background-color:#3D8C6E; }
 	.eventful ul li.jrdevent.meeting { background-color:#D0A15A; }
 	.eventful ul li.jrdevent.company-event { background-color:#BD4F6B; }
+	table.em-calendar .days-names td { padding-top:15px; }
+	table.em-calendar tbody tr td:first-child { padding-left:15px; }
+	table.em-calendar tbody tr td:last-child { padding-right:15px; }
+	table.em-calendar tbody tr:last-child td { padding-bottom:20px; }
 
 
 /* Calendar styles end */

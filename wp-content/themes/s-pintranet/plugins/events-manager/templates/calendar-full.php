@@ -16,9 +16,10 @@ $col_max = count($calendar['row_headers']); //each time this collumn number is r
 <table class="em-calendar fullcalendar">
 	<thead>
 		<tr>
-			<td><a class="em-calnav full-link em-calnav-prev" href="<?php echo esc_url($calendar['links']['previous_url']); ?>">&lt;&lt;</a></td>
-			<td class="month_name" colspan="5"><?php echo esc_html(ucfirst(date_i18n(get_option('dbem_full_calendar_month_format'), $calendar['month_start']))); ?></td>
-			<td><a class="em-calnav full-link em-calnav-next" href="<?php echo esc_url($calendar['links']['next_url']); ?>">&gt;&gt;</a></td>
+			<td class="month_name" colspan="7">
+				<a href="<?php echo esc_url($calendar['links']['previous_url']); ?>" class="leftbtn"><img src="<?php bloginfo('url') ?>/ui/images/mobilearrow.png"/><img src="<?php bloginfo('url') ?>/ui/images/mobilearrowhover.png"/></a>
+				<?php echo esc_html(ucfirst(date_i18n(get_option('dbem_full_calendar_month_format'), $calendar['month_start']))); ?>
+				<a href="<?php echo esc_url($calendar['links']['next_url']); ?>" class="rightbtn"><img src="<?php bloginfo('url') ?>/ui/images/mobilearrow.png"/><img src="<?php bloginfo('url') ?>/ui/images/mobilearrowhover.png"/></a></th></td>
 		</tr>
 	</thead>
 	<tbody>
