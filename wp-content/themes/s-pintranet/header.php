@@ -34,8 +34,9 @@
                 </div>
                 <div id="usermenu">
                     <ul class"usermenuitems">
-                        <li><a href="#">Hello, Jude</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <?php global $user; $user = get_current_user_id(); $uData = get_user_meta($user); ?>
+                        <li><a href="#">Hello, <?php echo $uData['first_name'][0]; ?></a></li>
+                        <li><a href="<?php echo wp_logout_url(); ?>">Logout</a></li>
                         <li id='headsearch' class='headsearch' >
                             <form role="search" method="get" id="searchhead" class="headsearch" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 

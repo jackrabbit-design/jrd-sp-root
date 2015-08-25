@@ -35,7 +35,7 @@ add_filter('login_errors',create_function('$a', "return null;"));
 /* Post Thumbnail Sizes */
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 64, 64, true );
-//add_image_size( 'size-name', 100, 100, true);
+add_image_size( 'pro-pic', 154, 154, true);
 
 /* Declare Nav Menu Areas */
 if ( function_exists( 'register_nav_menus' ) ) {
@@ -146,6 +146,7 @@ add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
 function enqueue_styles() {
     wp_enqueue_style('style', get_bloginfo('url').'/ui/css/style.css', array(), null);
+	wp_enqueue_style('fixes', get_bloginfo('url').'/ui/css/fixes.css', array(), null);
 }
 add_action('wp_enqueue_scripts', 'enqueue_styles');
 
@@ -476,3 +477,45 @@ function create_recurring_posts( $post_id ) {
 }
 add_action( 'acf/pre_save_post', 'create_recurring_posts');
 */
+
+function my_pre_save_post( $post_id )
+{
+    // check if this is to be a new post
+    if( $post_id != 'new' )
+    {
+        return $post_id;
+    }
+
+    // update $_POST['return']
+    $_POST['return'] = add_query_arg( array('post_id' => $post_id), $_POST['return'] );
+
+    // return the new ID
+    return $post_id;
+}
+
+add_filter('acf/pre_save_post' , 'my_pre_save_post' );
+
+/* ========================================================================= */
+/* !HIDE MEDIA LIBRARY FUNCTION */
+/* ========================================================================= */
+function remove_medialibrary_tab($strings) {
+    if ( !current_user_can( 'administrator' ) ) {
+        unset($strings["mediaLibraryTitle"]);
+    return $strings;
+    }
+    else
+    {
+        return $strings;
+    }
+}
+add_filter('media_view_strings','remove_medialibrary_tab');
+
+function restrict_non_Admins(){
+
+        if(!current_user_can('administrator')){
+            exit;
+        }
+    }
+
+add_action('wp_ajax_query-attachments','restrict_non_Admins',1);
+add_action('wp_ajax_nopriv_query-attachments','restrict_non_Admins',1);
