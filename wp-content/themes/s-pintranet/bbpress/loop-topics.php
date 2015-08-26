@@ -14,7 +14,7 @@
 <table id="messagetable" class="sortable" cellspacing="0" width="100%">
 	<thead>
 		<tr>
-			<th class="messageth60">Topics</th>
+			<th class="messageth60">Topic</th>
 			<th class="messageth15">Posted By</th>
 			<th class="messageth10">Posts</th>
 			<th class="messageth15">Last Activity</th>

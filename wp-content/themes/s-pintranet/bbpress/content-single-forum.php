@@ -29,6 +29,7 @@
 
 	<?php endif; ?>
 
+	<?php bbp_get_template_part( 'form', 'topic' ); ?>
 
 	<?php do_action( 'bbp_template_after_single_forum' ); ?>
 

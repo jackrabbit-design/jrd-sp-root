@@ -22,6 +22,6 @@
         </ul>
     </form>
     <div class="newpost">
-        <a href="#" class="newpost">Start New Topic</a>
+        <a href="" class="newpost">Start New Topic</a>
     </div>
 </div>
