@@ -17,26 +17,24 @@ get_header(); ?>
 
 	<?php include (TEMPLATEPATH . '/secondary-menu.php'); ?>
 
-	<?php do_action( 'bbp_before_main_content' ); ?>
+    <div id="main">
+        <div class="wrap">
 
-	<?php do_action( 'bbp_template_notices' ); ?>
+        	<p class="openp">Vestibulum tincidunt est a erat porttitor ultricies. Donec leo neque, mattis nec massa ut, posuere viverra mi. Nullam sed mi dapibus, ultrices sem ut, pellentesque lectus. In hac habitasse platea dictumst. Nullam ullamcorper euismod ligula. Sed scelerisque tristique enim at faucibus. </p>
+        </div>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+		<?php do_action( 'bbp_before_main_content' ); ?>
 
-		<div id="forum-front" class="bbp-forum-front">
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<div class="entry-content">
+		<?php do_action( 'bbp_template_notices' ); ?>
 
-				<?php the_content(); ?>
+		<?php the_post(); ?>
 
-				<?php bbp_get_template_part( 'content', 'archive-forum' ); ?>
+		<?php bbp_get_template_part( 'content', 'archive-forum' ); ?>
 
-			</div>
-		</div><!-- #forum-front -->
+		<?php do_action( 'bbp_after_main_content' ); ?>
 
-	<?php endwhile; ?>
-
-	<?php do_action( 'bbp_after_main_content' ); ?>
+		<div class="divider">&nbsp;</div>
+	</div>
 
 
 <?php get_footer(); ?>

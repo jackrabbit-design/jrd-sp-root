@@ -751,9 +751,10 @@ input[type=submit]:hover, button:hover {  }
 /* Calendar styles end */
 
 /*  Message board styles */
+	.bbp-author-avatar { display:none; }
 
 	.newpost {background: #76B84A; border-radius: 40px; font-size: 16px; color: #FFFFFF; letter-spacing: 0.66px; line-height: 20px; float:right; padding:3px 10px;}
-	.msgsearch {float:left;}
+	.msgsearch { float:left; }
 	.msgsearch li {display:inline-block; padding-right:10px;}
 	.msgsearch li {vertical-align: middle;}
 	.msgsearch img {transform: rotate(45deg);}

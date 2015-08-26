@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Search 
+ * Search
  *
  * @package bbPress
  * @subpackage Theme
@@ -9,11 +9,19 @@
 
 ?>
 
-<form role="search" method="get" id="bbp-search-form" action="<?php bbp_search_url(); ?>">
-	<div>
-		<label class="screen-reader-text hidden" for="bbp_search"><?php _e( 'Search for:', 'bbpress' ); ?></label>
-		<input type="hidden" name="action" value="bbp-search-request" />
-		<input tabindex="<?php bbp_tab_index(); ?>" type="text" value="<?php echo esc_attr( bbp_get_search_terms() ); ?>" name="bbp_search" id="bbp_search" />
-		<input tabindex="<?php bbp_tab_index(); ?>" class="button" type="submit" id="bbp_search_submit" value="<?php esc_attr_e( 'Search', 'bbpress' ); ?>" />
-	</div>
-</form>
+
+<div class="wrap clearfix">
+    <form class="msgsearch" role="search" method="get" action="<?php bbp_search_url(); ?>">
+        <ul>
+            <li>
+                <input tabindex="<?php bbp_tab_index(); ?>" type="text" value="<?php echo esc_attr( bbp_get_search_terms() ); ?>" name="bbp_search" id="bbp_search" />
+				<input type="hidden" name="action" value="bbp-search-request" />
+            </li>
+            <li><img src="<?php bloginfo('url') ?>/ui/images/dropdown.png" width="18" /></li>
+            <li class="exmore">Clear search</li>
+        </ul>
+    </form>
+    <div class="newpost">
+        <a href="#" class="newpost">Start New Topic</a>
+    </div>
+</div>
