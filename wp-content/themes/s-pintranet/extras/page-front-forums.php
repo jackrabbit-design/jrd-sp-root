@@ -9,6 +9,14 @@
 
 get_header(); ?>
 
+	<div id="pagetitle">
+		<div class="wrap">
+			<h1><? the_title() ?></h1>
+		</div>
+	</div>
+
+	<?php include (TEMPLATEPATH . '/secondary-menu.php'); ?>
+
 	<?php do_action( 'bbp_before_main_content' ); ?>
 
 	<?php do_action( 'bbp_template_notices' ); ?>
@@ -30,5 +38,5 @@ get_header(); ?>
 
 	<?php do_action( 'bbp_after_main_content' ); ?>
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

@@ -21,7 +21,7 @@
 
 	<?php endif; ?>
 
-	<?php bbp_breadcrumb(); ?>
+	<?php //bbp_breadcrumb(); ?>
 
 	<?php bbp_forum_subscription_link(); ?>
 
@@ -37,6 +37,6 @@
 
 	<?php endif; ?>
 
-	<?php do_action( 'bbp_template_after_forums_index' ); ?>
+	<?php // do_action( 'bbp_template_after_forums_index' ); ?>
 
 </div>
