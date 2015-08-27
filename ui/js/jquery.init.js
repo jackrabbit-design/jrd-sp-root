@@ -13,6 +13,16 @@ $('.nav-toggle').click(function(){
                 $('.mobile').toggleClass('icon-cancel');
     });
 
+    $('a.newpost').on('click',function(){
+        $('.bbp-topic-form').slideToggle(200);
+        if($(this).text() == 'Start New Topic'){
+            $(this).text('Cancel New Topic');
+        }else{
+            $(this).text('Start New Topic');
+        }
+        return false;
+    })
+
     // PARALLAX
 /*
     $(document).scroll(function(){

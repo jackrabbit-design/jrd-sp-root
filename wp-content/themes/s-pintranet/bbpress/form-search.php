@@ -21,7 +21,7 @@
             <li class="exmore">Clear search</li>
         </ul>
     </form>
-    <div class="newpost">
+    <div>
         <a href="" class="newpost">Start New Topic</a>
     </div>
 </div>

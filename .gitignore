@@ -2,3 +2,4 @@
 prepros.cfg
 
 wp-config.php
+*.db

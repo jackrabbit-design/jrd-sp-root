@@ -20,6 +20,8 @@
 			<?php bbp_get_template_part( 'form', 'search' ); ?>
 	<?php endif; ?>
 
+	<?php bbp_get_template_part( 'form', 'topic' ); ?>
+
 	<?php if ( !bbp_is_forum_category() && bbp_has_topics() ) : ?>
 
 		<?php bbp_get_template_part( 'loop',       'topics'    ); ?>
@@ -28,8 +30,6 @@
 
 
 	<?php endif; ?>
-
-	<?php bbp_get_template_part( 'form', 'topic' ); ?>
 
 	<?php do_action( 'bbp_template_after_single_forum' ); ?>
 
