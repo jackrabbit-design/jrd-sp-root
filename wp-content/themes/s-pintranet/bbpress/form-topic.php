@@ -9,14 +9,6 @@
 
 ?>
 
-<?php if ( !bbp_is_single_forum() ) : ?>
-
-<div id="bbpress-forums">
-
-	<?php bbp_breadcrumb(); ?>
-
-<?php endif; ?>
-
 <?php if ( bbp_is_topic_edit() ) : ?>
 
 	<?php bbp_topic_tag_list( bbp_get_topic_id() ); ?>
@@ -45,25 +37,6 @@
 
 				</legend>
 
-				<?php do_action( 'bbp_theme_before_topic_form_notices' ); ?>
-
-				<?php if ( !bbp_is_topic_edit() && bbp_is_forum_closed() ) : ?>
-
-					<div class="bbp-template-notice">
-						<p><?php _e( 'This forum is marked as closed to new topics, however your posting capabilities still allow you to do so.', 'bbpress' ); ?></p>
-					</div>
-
-				<?php endif; ?>
-
-				<?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
-
-					<div class="bbp-template-notice">
-						<p><?php _e( 'Your account has the ability to post unrestricted HTML content.', 'bbpress' ); ?></p>
-					</div>
-
-				<?php endif; ?>
-
-				<?php do_action( 'bbp_template_notices' ); ?>
 
 				<div>
 
@@ -72,7 +45,7 @@
 					<?php do_action( 'bbp_theme_before_topic_form_title' ); ?>
 
 					<p>
-						<label for="bbp_topic_title"><?php printf( __( 'Topic Title (Maximum Length: %d):', 'bbpress' ), bbp_get_title_max_length() ); ?></label><br />
+						<label for="bbp_topic_title"><?php printf( __( 'Topic Title <span>max %d characters</span>', 'bbpress' ), bbp_get_title_max_length() ); ?></label>
 						<input type="text" id="bbp_topic_title" value="<?php bbp_form_topic_title(); ?>" tabindex="<?php bbp_tab_index(); ?>" size="40" name="bbp_topic_title" maxlength="<?php bbp_title_max_length(); ?>" />
 					</p>
 
@@ -80,99 +53,9 @@
 
 					<?php do_action( 'bbp_theme_before_topic_form_content' ); ?>
 
-					<?php bbp_the_content( array( 'context' => 'topic' ) ); ?>
+					<?php bbp_the_content( array( 'context' => 'topic', 'quicktags' => false ) ); ?>
 
 					<?php do_action( 'bbp_theme_after_topic_form_content' ); ?>
-
-					<?php if ( ! ( bbp_use_wp_editor() || current_user_can( 'unfiltered_html' ) ) ) : ?>
-
-						<p class="form-allowed-tags">
-							<label><?php _e( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:','bbpress' ); ?></label><br />
-							<code><?php bbp_allowed_tags(); ?></code>
-						</p>
-
-					<?php endif; ?>
-
-					<?php if ( bbp_allow_topic_tags() && current_user_can( 'assign_topic_tags' ) ) : ?>
-
-						<?php do_action( 'bbp_theme_before_topic_form_tags' ); ?>
-
-						<p>
-							<label for="bbp_topic_tags"><?php _e( 'Topic Tags:', 'bbpress' ); ?></label><br />
-							<input type="text" value="<?php bbp_form_topic_tags(); ?>" tabindex="<?php bbp_tab_index(); ?>" size="40" name="bbp_topic_tags" id="bbp_topic_tags" <?php disabled( bbp_is_topic_spam() ); ?> />
-						</p>
-
-						<?php do_action( 'bbp_theme_after_topic_form_tags' ); ?>
-
-					<?php endif; ?>
-
-					<?php if ( !bbp_is_single_forum() ) : ?>
-
-						<?php do_action( 'bbp_theme_before_topic_form_forum' ); ?>
-
-						<p>
-							<label for="bbp_forum_id"><?php _e( 'Forum:', 'bbpress' ); ?></label><br />
-							<?php
-								bbp_dropdown( array(
-									'show_none' => __( '(No Forum)', 'bbpress' ),
-									'selected'  => bbp_get_form_topic_forum()
-								) );
-							?>
-						</p>
-
-						<?php do_action( 'bbp_theme_after_topic_form_forum' ); ?>
-
-					<?php endif; ?>
-
-					<?php if ( current_user_can( 'moderate' ) ) : ?>
-
-						<?php do_action( 'bbp_theme_before_topic_form_type' ); ?>
-
-						<p>
-
-							<label for="bbp_stick_topic"><?php _e( 'Topic Type:', 'bbpress' ); ?></label><br />
-
-							<?php bbp_form_topic_type_dropdown(); ?>
-
-						</p>
-
-						<?php do_action( 'bbp_theme_after_topic_form_type' ); ?>
-
-						<?php do_action( 'bbp_theme_before_topic_form_status' ); ?>
-
-						<p>
-
-							<label for="bbp_topic_status"><?php _e( 'Topic Status:', 'bbpress' ); ?></label><br />
-
-							<?php bbp_form_topic_status_dropdown(); ?>
-
-						</p>
-
-						<?php do_action( 'bbp_theme_after_topic_form_status' ); ?>
-
-					<?php endif; ?>
-
-					<?php if ( bbp_is_subscriptions_active() && !bbp_is_anonymous() && ( !bbp_is_topic_edit() || ( bbp_is_topic_edit() && !bbp_is_topic_anonymous() ) ) ) : ?>
-
-						<?php do_action( 'bbp_theme_before_topic_form_subscriptions' ); ?>
-
-						<p>
-							<input name="bbp_topic_subscription" id="bbp_topic_subscription" type="checkbox" value="bbp_subscribe" <?php bbp_form_topic_subscribed(); ?> tabindex="<?php bbp_tab_index(); ?>" />
-
-							<?php if ( bbp_is_topic_edit() && ( bbp_get_topic_author_id() !== bbp_get_current_user_id() ) ) : ?>
-
-								<label for="bbp_topic_subscription"><?php _e( 'Notify the author of follow-up replies via email', 'bbpress' ); ?></label>
-
-							<?php else : ?>
-
-								<label for="bbp_topic_subscription"><?php _e( 'Notify me of follow-up replies via email', 'bbpress' ); ?></label>
-
-							<?php endif; ?>
-						</p>
-
-						<?php do_action( 'bbp_theme_after_topic_form_subscriptions' ); ?>
-
-					<?php endif; ?>
 
 					<?php if ( bbp_allow_revisions() && bbp_is_topic_edit() ) : ?>
 
