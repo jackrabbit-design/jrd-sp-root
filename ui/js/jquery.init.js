@@ -20,7 +20,24 @@ $('.nav-toggle').click(function(){
         }else{
             $(this).text('Start New Topic');
         }
+        $('html,body').animate({
+            scrollTop: $(this).offset().top - 50
+        },200);
         return false;
+    })
+
+    $('.postreply .replybtn').on('click',function(e){
+        e.preventDefault();
+        $('html,body').animate({
+            scrollTop: $('#new-post').offset().top
+        },200);
+        return false;
+    });
+
+    $('.comcontent .replies:first').each(function(){
+        if($('p:first',this).text() == $('.intro p:first').text()){
+            $(this).hide();
+        }
     })
 
     // PARALLAX

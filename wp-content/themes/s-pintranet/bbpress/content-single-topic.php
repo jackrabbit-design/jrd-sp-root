@@ -45,33 +45,16 @@
 
 		<?php if ( bbp_has_replies() ) : ?>
 
-			<?php bbp_get_template_part( 'pagination', 'replies' ); ?>
-
 			<?php bbp_get_template_part( 'loop',       'replies' ); ?>
+			
+			<div class="postcloser"></div>
 
 			<?php bbp_get_template_part( 'pagination', 'replies' ); ?>
 
 		<?php endif; ?>
 
-
-		<div class="postcloser"></div>
-   		<div>
-            <ul class="tablenav">
-            	<li><a href="#">1</a></li>
-            	<li><a href="#" class="currentpage">2</a></li>
-            	<li><a href="#">3</a></li>
-            	<li><a href="#">4</a></li>
-            	<li><a href="#">5</a></li>
-            	<li><a href="#">></a></li>
-            </ul>
-        </div>
-
 		<?php bbp_get_template_part( 'form', 'reply' ); ?>
 
-        <textarea class="textreply clearfix">
-
-        </textarea>
-        <a href="#" class="replybtn">Post Reply</a>
     </div>
     <div class="divider">&nbsp;</div>
 </div>
