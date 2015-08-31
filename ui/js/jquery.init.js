@@ -40,6 +40,40 @@ $('.nav-toggle').click(function(){
         }
     })
 
+    if($('#chgpass').length){
+        $.magnificPopup.open({
+            items:{
+                src: '#chgpass',
+                type: 'inline'
+            },
+            closeOnBgClick: false,
+            enableEscapeKey: false,
+            showCloseBtn: false
+        })
+    }
+
+    /* Ajax load more Pagination */
+    $(document).on('click', '.em-calendar .month_name a', function(e)  {
+        e.preventDefault();
+       // $('.text_holder').append("<div class=\"loader\">&nbsp;</div>");
+        var link = jQuery(this).attr('href');
+
+        var $content = '.em-calendar';
+        $('.em-calendar').animate({
+            opacity: 0.3
+        },150).after('<div class="loader"></div>');
+        $.get(link+'', function(data){
+            var $elements = $('<div>').append(data);
+            var $new_content = $elements.find($content).wrapInner('').html(); // Grab just the content
+            $($content).html($new_content); // Append the new content
+
+        }).done(function(data){
+            $('.em-calendar').animate({
+                opacity: 1
+            },50).siblings('.loader').remove();
+        });
+    });
+
     // PARALLAX
 /*
     $(document).scroll(function(){

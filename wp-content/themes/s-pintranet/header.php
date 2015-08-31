@@ -25,6 +25,20 @@
     ?>
 </head>
 <body>
+
+    <?php if(get_field('has_changed_password','user_'.get_current_user_id()) != true){ ?>
+        <div style="display:none;">
+            <form action="changepass.php" method="post" id="chgpass">
+                <h2>First time here?</h2>
+                <h3>Please update your password.</h3>
+                <input type="password" name="pass" />
+                <input type="hidden" name="uid" value="<?php echo get_current_user_id() ?>">
+                <button type="submit">Update Password</button>
+                <p>Upon submission, you will be prompted to log in using your username and new password.</p>
+            </form>
+        </div>
+    <?php } ?>
+
     <!--[if lte IE 7]><iframe src="unsupported.html" frameborder="0" scrolling="no" id="no_ie6"></iframe><![endif]-->
     <div class="wrapper">
         <div id="header">
@@ -69,15 +83,15 @@
                     <div id="nav-container">
                         <?php
                         wp_nav_menu( array(
-                                    'theme_location' => 'main-menu',
-                                    'container' => '',
-                                    'menu_class' =>
-                                    'nav',
-                                    'menu_id' => '',
-                                    'depth' => 2,
-                                    'items_wrap' => '<ul id="%2$s">%3$s</ul>'
-                                ));
-                                ?>
+                            'theme_location' => 'main-menu',
+                            'container' => '',
+                            'menu_class' =>
+                            'nav',
+                            'menu_id' => '',
+                            'depth' => 2,
+                            'items_wrap' => '<ul id="%2$s">%3$s</ul>'
+                        ));
+                        ?>
                     </div><!-- END nav-container -->
                 </div>
             </div>

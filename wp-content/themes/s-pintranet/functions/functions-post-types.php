@@ -91,6 +91,7 @@ register_post_type(
 		'public' => true,
 		'show_ui' => true,
 		'capability_type' => 'post',
+		'map_meta_cap' =>  true,
 		'hierarchical' => true,
 		'rewrite' => array('slug' => $postNameSlug),
 		'query_var' => true,

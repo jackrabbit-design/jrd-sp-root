@@ -17,7 +17,7 @@
 	<?php do_action( 'bbp_theme_after_reply_content' ); ?>
 	<div class="poster">
 
-		<?php $auth = get_userdata(bbp_get_topic_author_id())->ID; ?>
+		<?php $auth = get_userdata(bbp_get_reply_author_id())->ID; ?>
 		<?php $pro = get_field('associated_profile',"user_{$auth}") ?>
 
 		<?php if($pic = get_field('photo',$pro)){ ?>

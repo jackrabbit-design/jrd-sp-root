@@ -702,6 +702,8 @@ input[type=submit]:hover, button:hover {  }
 	.caloption .exmore {font-size: 12px; line-height: 15px;}
 	.caloption .exmore:hover {color:#0A5385}
 
+	.em-calendar-wrapper { position:relative; }
+	.em-calendar-wrapper .loader { position:absolute; top:50%; left:50%; width:24px; height:24px; display:block; background:url('../images/loader.gif') no-repeat center center; margin:-12px 0 0 -12px; }
 
 	.em-calendar {border: 1px solid #DEDEDE; width:100%;}
 	.em-calendar tr:nth-child(even) {background-color: #fff;}
@@ -855,6 +857,14 @@ input[type=submit]:hover, button:hover {  }
 	#edit .acf-form-submit .button { background: #76B84A none repeat scroll 0% 0%; box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1); border-radius: 40px; font-size: 16px; color: #FFF; letter-spacing: 0.66px; line-height: 20px; padding: 6px 32px; border:none; box-sizing:content-box; }
 
 /* employee profile styles end */
+
+
+	#chgpass { width:320px; box-sizing:border-box; padding:24px; background:#fff; margin:0 auto; text-align:center; }
+	#chgpass h3 { padding:12px 0; }
+	#chgpass input { width:100%; height: 38px; padding: 8px 10px; width:100%; border:1px solid #D5D5D5; background:#F8F8F8; font-size:32px; text-align:center; line-height:1; color:#7B7B7B; }
+	#chgpass button { width:100%; box-sizing:border-box; display:block; height:32px; background:#77B750; color:#fff; border-radius:16px; text-transform:uppercase; margin-top:15px; }
+	#chgpass button:hover { color:#0A5385; }
+	#chgpass p { font-size:12px; line-height:1.3; margin-top:20px; }
 
 /* ========================================================================= */
 /* !MEDIA QUERIES */
