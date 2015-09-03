@@ -466,9 +466,9 @@ input[type=submit]:hover, button:hover {  }
 
 	#maincontent { max-width:1150px; margin:auto; padding:30px 0px;  overflow: hidden; }
 	#content {background: #fff; padding: 0; height: 220px; position: relative; z-index: 2; border-radius: 0 5px 5px 5px; }
-	.leftcol{ display: inline-block; width: 34%; padding:20px 20px 20px 0; vertical-align: top;}
-	.rightcol{ display:inline-block; width: 33%; padding:20px 0 20px 20px; vertical-align: top;}
-	.centercol{ display: inline-block; width: 33%; padding:20px 0 20px 0; vertical-align: top;}
+	.leftcol{ display: inline-block; width: 33.3%; padding:20px 20px 20px 0; vertical-align: top;}
+	.rightcol{ display:inline-block; width: 33.3%; padding:20px 0 20px 20px; vertical-align: top;}
+	.centercol{ display: inline-block; width: 33.3%; padding:20px 10px; vertical-align: top;}
 	.leftcol img { width:100%; padding:10px 0 0 0;}
 	.rightcol img { width:100%; padding:10px 0 0 0;}
 	.centercol img { width:100%; padding:10px 0 0 0;}
@@ -482,7 +482,7 @@ input[type=submit]:hover, button:hover {  }
 	.featureright {float:right; width:45%; margin:auto; position: relative; left: 0; top: 0;}
 	.featureright img {max-width:100%;}
 	#doctable {border:1px solid #F7F7F7; margin:auto; font-size:16px; margin-top:20px;}
-	.docth10 { width:15%; background: #0A5385; text-align: left;  color:#fff; font-weight:500; vertical-align: middle;padding-left:3%; padding-top:15px; padding-bottom:15px; height:60px;  }
+	.docth10 { width:15%; background: #0A5385; text-align: left;  color:#fff; font-weight:500; vertical-align: middle;padding-left:3%; padding-top:15px; padding-bottom:15px; height:60px; white-space: nowrap;}
 	.docth70 { width:55%; background: #0A5385; text-align: left;  color:#fff; font-weight:500; vertical-align: middle;padding-left:3%; padding-top:15px; padding-bottom:15px; }
 	.table10 {width:15%;  text-align: left; vertical-align: middle;padding-left:3%; padding-top:15px; padding-bottom:15px; color:#7B7B7B;}
 	.table70 {width:55%;  text-align: left; vertical-align: middle; padding-left:3%; font-weight: 300; padding-top:15px;padding-bottom:15px; color:#7B7B7B;}

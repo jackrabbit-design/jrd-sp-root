@@ -36,6 +36,8 @@ add_filter('login_errors',create_function('$a', "return null;"));
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 64, 64, true );
 add_image_size( 'pro-pic', 154, 154, true);
+add_image_size( 'general-side', 400, 290, true);
+add_image_size( 'three-col', 330, 163, true);
 
 /* Declare Nav Menu Areas */
 if ( function_exists( 'register_nav_menus' ) ) {

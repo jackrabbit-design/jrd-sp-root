@@ -43,14 +43,84 @@ get_header(); the_post(); ?>
 					                        </div>
 
 					                        <div class="tabsidebar">
-					                            <img src="ui/images/mediaimage.png" alt="" / >
-					                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur erat dolor.</p>
+					                            <img src="<?php $img = get_sub_field('image'); echo $img['sizes']['general-side'] ?>" alt="" / >
+					                            <p><?php the_sub_field('caption'); ?></p>
 					                        </div>
 									    </div>
 									<?php endwhile; ?>
 								</div>
 							</div>
+							<div class="clear"></div>
+							<div class="homespace">&nbsp;</div>
 						<?php } ?>
+					<?php }elseif(get_row_layout() == 'documents'){ ?>
+						<div class="wrap">
+			                <table id="doctable" class="sortable" cellspacing="0" width="100%">
+			                    <thead>
+			                        <tr>
+			                            <th class="docth10">Date</th>
+			                            <th class="docth70">Document Title</th>
+			                            <th class="docth10">Type</th>
+			                            <th class="docth10">Download</th>
+			                        </tr>
+			                    </thead>
+			                    <tbody>
+									<?php while(have_rows('docs')){ the_row(); ?>
+				                        <tr>
+				                            <td class="table10"><?php the_sub_field('date'); ?></td>
+				                            <td class="table70"><?php the_sub_field('doc-title'); ?></td>
+				                            <td class="table10"><?php the_sub_field('doc-type'); ?></td>
+				                            <td class="table10"><a href="<?php $dl = get_sub_field('download'); echo $dl['url'] ?>" download class="exmore">Download</a></td>
+				                        </tr>
+									<?php } ?>
+			                    </tbody>
+			                </table>
+		                </div>
+						<div class="clear"></div>
+						<div class="homespace">&nbsp;</div>
+
+					<?php }elseif(get_row_layout() == 'text_columns'){
+						$i = 1; ?>
+						<div class="wrap">
+							<?php while(have_rows('columns')){ the_row();
+								if($i == 1){ $class="leftcol"; }
+								if($i == 2){ $class="centercol"; }
+								if($i == 3){ $class="rightcol"; }
+								$img = get_sub_field('image');
+							?>
+				            	<div class="<?php echo $class ?>">
+				            		<div class="colfloatleft">
+					                    <h2><?php the_sub_field('title'); ?></h2>
+					                </div>
+					                <div class="colfloatright">
+				            			<img src="<?php echo $img['sizes']['three-col'] ?>" alt="" />
+				            		</div>
+				            		<div class="colfloatleft">
+					                    <p><?php the_sub_field('text'); ?></p>
+				                	</div>
+				                </div>
+
+]							<?php $i++; } ?>
+						</div>
+						<div class="clear"></div>
+						<div class="homespace">&nbsp;</div>
+					<?php }elseif(get_row_layout() == 'featured_video'){ ?>
+						<div class="wrap">
+				            <div class="wrap">
+					            <div id="featured">
+					            	<div class="featureright">
+						                <img src="/ui/images/videoimg.png" alt="" />
+						            </div>
+					                <div class="featureleft">
+						                <h3><?php the_sub_field('subtitle'); ?></h3>
+						                <h2><?php the_sub_field('title'); ?></h2>
+						                <p><?php the_sub_field('description'); ?></p>
+					                	<a href="#" class="learnmore">Learn More</a>
+						            </div>
+
+						    	</div>
+			           		</div>
+			           	</div>
 					<?php } ?>
 				<?php } ?>
 			<?php } ?>
@@ -63,120 +133,15 @@ get_header(); the_post(); ?>
 
 
 
+<!--
 
-	           <!-- <div id="maincontent">
-	            	<div class="wrap">
-		                <table id="doctable" class="sortable" cellspacing="0" width="100%">
-		                    <thead>
-		                        <tr>
-		                            <th class="docth10">Date</th>
-		                            <th class="docth70">Document Title</th>
-		                            <th class="docth10">Type</th>
-		                            <th class="docth10">Download</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody>
-		                        <tr>
-		                            <td class="table10">July 1, 2015</td>
-		                            <td class="table70">Lorem Ipsum Document Title</td>
-		                            <td class="table10">.DOC</td>
-		                            <td class="table10"><a href="#" class="exmore">Download</a></td>
-		                        </tr>
-		                        <tr>
-		                            <td class="table10">June 17, 2015</td>
-		                            <td class="table70">Consectetur adipiscing Document Title</td>
-		                            <td class="table10">.PDF</td>
-		                            <td class="table10"><a href="#" class="exmore">Download</a></td>
-		                        </tr>
-		                        <tr>
-		                            <td class="table10">July 1, 2015</td>
-		                            <td class="table70">Lorem Ipsum Document Title</td>
-		                            <td class="table10">.XLS</td>
-		                            <td class="table10"><a href="#" class="exmore">Download</a></td>
-		                        </tr>
-		                        <tr>
-		                            <td class="table10">June 17, 2015</td>
-		                            <td class="table70">Consectetur adipiscing Document Title</td>
-		                            <td class="table10">.PDF</td>
-		                            <td class="table10"><a href="#" class="exmore">Download</a></td>
-		                        </tr>
-		                        <tr>
-		                            <td class="table10">July 1, 2015</td>
-		                            <td class="table10">Lorem Ipsum Document Title</td>
-		                            <td class="table70">.PDF</td>
-		                            <td class="table10"><a href="#" class="exmore">Download</a></td>
-		                        </tr>
-		                        <tr>
-		                            <td class="table10">June 17, 2015</td>
-		                            <td class="table10">Consectetur adipiscing Document Title</td>
-		                            <td class="table70">.PDF</td>
-		                            <td class="table10"><a href="#" class="exmore">Download</a></td>
-		                        </tr>
-		                    </tbody>
-		                </table>
-	                </div>
-	            </div>
-	            <div id="maincontent">
-	            	<div class="wrap">
-		            	<div class="leftcol">
-		            		<div class="colfloatleft">
-			                    <h2>Headline 1 of column 1</h2>
-			                </div>
-			                <div class="colfloatright">
-		            			<img src="ui/images/wideoffice.png" alt="" />
-		            		</div>
-		            		<div class="colfloatleft">
-			                    <p>Praesent velit elit, semper nec efficitur at, vestibulum vel ante. Pellentesque suscipit nec libero id. Proin blandit dolor arcu, volutpat pellentesque mauris lobortis nec.</p>
-		                	</div>
-		                </div>
-		                <div class="centercol">
-		            		<div class="colfloatleft">
-			                    <h2>Lorem ipsum headline 2</h2>
-			                </div>
-			                <div class="colfloatright">
-		            		</div>
-		            		<div class="colfloatleft">
-			                    <p>Aecenas eleifend, metus in condimentum tincidunt, lectus lorem imperdiet turpis, in aliquam ante massa quis neque. ullam mollis ipsum vel turpis euismod aliquet. Nunc ut lorem ac odio tincidunt commodo.</p>
-			                    <p>Aliquam vitae lobortis justo. Sed eu ante nisl, ut hendrerit felis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam elementum risus velit, vitae adipiscing nisi. Aliquam erat volutpat.</p>
-			                </div>
-		                 </div>
-		                <div class="rightcol">
-		            		<div class="colfloatleft">
-		            			<h2>Headline 3 pellentesque Sagittis Ultricies Sapien</h2>
-		            		</div>
-		            		<div class="colfloatright">
-		            			<img src="ui/images/wideoffice.png" alt="" />
-		            		</div>
-		            		<div class="colfloatleft">
-			                    <p>Praesent velit elit, semper nec efficitur at, vestibulum vel ante. Pellentesque suscipit nec libero id. Proin blandit dolor arcu, volutpat pellentesque mauris lobortis nec.</p>
-			                </div>
-		                </div>
-		         		<div class="clear"></div>
-		            	<div class="homespace">&nbsp;</div>
-		            	</div>
-			            <div class="wrap">
-				            <div id="featured">
-				            	<div class="featureright">
-					                <img src="ui/images/videoimg.png" alt="" />
-					            </div>
-				                <div class="featureleft">
-					                <h3>Featured Video</h3>
-					                <h2>Featured video title lorem ipsum postquam</h2>
-					                <p>Praesent velit elit, semper nec efficitur at, vestibulum vel ante. Pellentesque suscipit nec libero id. Proin blandit dolor arcu, volutpat pellentesque mauris lobortis nec. Aliquam vitae lobortis justo. Sed eu ante nisl, ut hendrerit felis. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-				                	<a href="#" class="learnmore">Learn More</a>
-					            </div>
-
-					    	</div>
-		           		</div>
-		           	</div>
-		        </div>-->
 	    		<?php get_template_part('employee-blurb'); ?>
 	    	<!--	<div class="homespacer"></div>
 	        	<div class="wrap">
 		            <div id="featured">
 
 		            	<div class="featureright">
-		                    <img src="ui/images/featuredimg.png" alt="" />
+		                    <img src="/ui/images/featuredimg.png" alt="" />
 		                </div>
 		                <div class="featureleft">
 			                <h3>Featured</h3>
