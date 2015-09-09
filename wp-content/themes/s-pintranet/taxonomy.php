@@ -1,15 +1,15 @@
 <?
-/* Template Name: Regional News */
+/* Template Name: Media Overview */
 get_header(); the_post(); ?>
 
 		<div id="pagetitle">
             <div class="wrap">
-                <h1><? the_title() ?></h1>
+                <h1><?= $wp_query->queried_object->name ?></h1>
             </div>
         </div>
 
-		<?php get_template_part('secondary-menu'); ?>
-    
+        <?php get_template_part('secondary-menu'); ?>
+
 
 
 
@@ -20,16 +20,15 @@ get_header(); the_post(); ?>
         'post_type' => 'news',
         'posts_per_page' => '8',
         'paged' => $paged,
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'news-types',
-                'field' => 'slug',
-                'terms' => array(
-                    'regional-news'
-                )
-            )
-        )
-    );
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'news-types',
+				'field' => 'slug',
+				'terms' => get_query_var('news-types')
+			)
+		)
+
+    )
     ?>
 
     <?php query_posts($args); if(have_posts()){ ?>
@@ -39,19 +38,18 @@ get_header(); the_post(); ?>
 	            <div id="comcontent">
 
                 <?php while(have_posts()){ the_post();
-                    $topics = get_the_terms($post->ID, 'topic');
-                    $types = get_the_terms($post->ID, 'type');
-                    $terms = array_merge($topics,$types);
+                    $terms = get_the_terms($post->ID, 'news-types');
                     $ts = ''; $i = 1;
-                    foreach($terms as $t){
-                        $ts .= $t->name . ($i++ < count($terms) ? ', ' : '');
-                    }
+					if($terms){
+	                    foreach($terms as $t){
+	                        $ts .= '<a href="'.get_term_link($t->term_id, $t->taxonomy).'">' . $t->name . '</a>' . ($i++ < count($terms) ? ', ' : '');
+	                    }
+					};
                     $link = (get_field('external_link') ? get_field('external_link') . '" target="_blank' : get_permalink());
                 ?>
                     <div class="preview">
-                    	 <?php echo '<h3>'.$term.'</h3>';?>
                         <h4><?php if($ts){ ?>
-                                <i><?php echo $ts ?></i> |
+                                <?php echo $ts ?> |
                             <?php } ?>
                             <?php echo get_the_date('F j, Y' ); ?>
                         </h4>
@@ -62,7 +60,7 @@ get_header(); the_post(); ?>
                     </div>
                 <?php } ?>
                 <div class="load-more">
-                    <? next_posts_link('LOADING MORE...');  ?>
+                    <? next_posts_link('Load More News');  ?>
                 </div>
             </div>
         </div>

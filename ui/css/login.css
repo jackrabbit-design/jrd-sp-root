@@ -106,7 +106,7 @@ font-weight: 800; font-style: italic; }
 
     .login #nav a:hover,
     .login #backtoblog a:hover,
-    .login h1 a:hover{color:#A21817;}
+    .login h1 a:hover{color:#fff; font-weight:600;}
 
 
     #login { margin:0; padding:100px 0 175px;; width:100%; background-image: -webkit-gradient(
@@ -123,7 +123,12 @@ background-image: -ms-linear-gradient(bottom, #1B5F93 0%, #0E4C7B 100%);
 background-image: linear-gradient(to bottom, #1B5F93 0%, #0E4C7B 100%);
     }
 
-    #loginform { width:350px; margin:0 auto; background:none; padding:0; box-shadow:none; overflow:visible; }
+    .login .message { border:none; background:none; text-align:center; color:#fff; color:rgba(255, 255, 255, 0.6); box-shadow:none; font-family:'ProximaNova'; padding-bottom:40px; }
+
+    .login #login_error { width:350px; margin:0 auto; box-sizing:border-box; background:none; border:1px solid #78B750; color:#fff; margin-bottom:40px; }
+    .login #login_error strong { color:#78B750; } 
+
+    #loginform, #lostpasswordform { width:350px; margin:0 auto; background:none; padding:0; box-shadow:none; overflow:visible; }
 
     .login label, .forgetmenot label { font:600 14px ProximaNova; color:#74B943; text-transform: uppercase; }
 

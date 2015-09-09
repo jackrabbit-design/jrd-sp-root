@@ -24,7 +24,7 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); // Display relatio
 remove_action( 'wp_head', 'wp_generator' ); // Display the XHTML generator that is generated on the wp_head hook, WP version
 
 /* Prevent Login Errors for Security */
-add_filter('login_errors',create_function('$a', "return null;"));
+//add_filter('login_errors',create_function('$a', "return null;"));
 
 
 
@@ -148,6 +148,7 @@ function enqueue_scripts() {
     wp_enqueue_script('jquery', get_bloginfo('url').'/ui/js/jquery.js', array(), null);
     wp_enqueue_script('plugins', get_bloginfo('url').'/ui/js/jquery.plugins.js', array('jquery'), null, true);
     wp_enqueue_script('init', get_bloginfo('url').'/ui/js/jquery.init.js', array('jquery', 'plugins'), null, true);
+	wp_enqueue_script('sorttable', get_bloginfo('url').'/ui/js/sorttable.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 

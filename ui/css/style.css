@@ -159,7 +159,9 @@ font-style:italic; font-weight:600; }
 
 html, body { font-family:"ProximaNova"; font-weight: 300; width:100%;}
 
-pre { font-size:10px; }
+a { color:#76B84A; }
+
+pre { font-size:10px !important; }
 
 /* != SELECTION STYLES (Leaving these blank will show no indication of text selection) ===== */
 /*
@@ -210,7 +212,6 @@ pre { font-size:10px; }
 .alignnone { display: inline-block; }
 
 /* != LAYOUT STYLES ===== */
-
 p { font-size: 15px; color: #7B7B7B; letter-spacing: 0.64px; line-height: 24px; }
 
 h1 { font-family: "Crimson"; font-size: 40px; color: #FFFFFF; line-height: 43px; }
@@ -251,7 +252,7 @@ input[type=submit]:hover, button:hover {  }
 .faqwrap { max-width:1180px; margin:auto; padding:0 20px;}
 .wrap { max-width:1180px; margin:auto; font-size:0; padding:0 20px; position:relative;}
 .navwrap { max-width:1180px; margin:auto; font-size:0; }
-.footerwrap { max-width:1180px; margin:auto; font-size:0; padding:0 20px 100px;}
+.footerwrap { max-width:1180px; margin:auto; font-size:0; padding:40px 20px 100px;}
 
 /* Header styles */
 
@@ -394,7 +395,7 @@ input[type=submit]:hover, button:hover {  }
 /* FAQ styles */
 
 	.accordion dl, .accordion-list { border-bottom: 1px solid #D8D8D8; }
-	.accordion dl:after, .accordion-list:after { content: ""; display: block; height: 1em; width: 100%; }
+	/*.accordion dl:after, .accordion-list:after { content: ""; display: block; height: 1em; width: 100%; }*/
 	.accordion dd, .accordion__panel { font-size: 1em; line-height: 1.5em; max-width: 1020px; margin: auto;}
 	.accordion p { font-size:14px; padding: 0em 2em 20px 12px; }
 	.accordion { position: relative; margin:auto; max-width:1100px; margin-top:50px; }
@@ -430,9 +431,14 @@ input[type=submit]:hover, button:hover {  }
 	.preview:nth-child(even) {  margin: -1px 0 30px 2.5%;}
 	.preview { display:inline-block; width:47.5%; border-top: 1px solid #ccc; margin: -1px 2.5% 20px 2.5%; vertical-align: top;}
 	.preview h4 {padding-top:30px;}
+	.preview h4 a { color:#999; }
+	.preview a:hover { text-decoration: underline; }
 	.preview h2 {padding-top:8px;}
 	.preview p {padding-top:10px;}
 	.exmore { font-size: 14px; color: #76B84A; letter-spacing: 0.6px; line-height: 28px; text-transform: uppercase;}
+
+	.load-more { border-top:1px solid #ccc; padding-top:20px; }
+	.load-more a { font-size: 14px; color: #76B84A; letter-spacing: 0.6px; line-height: 28px; text-transform: uppercase; }
 
 /* end company communications styles */
 
@@ -612,7 +618,7 @@ input[type=submit]:hover, button:hover {  }
 
 /* employee blurb styles */
 
-	#employeeblurb { margin:0px 0 40px 0; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0f5f95+0,004a7c+100 */
+	#employeeblurb { margin:0px; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0f5f95+0,004a7c+100 */
 	background: #0f5f95; /* Old browsers */
 	background: -moz-linear-gradient(top,  #0f5f95 0%, #004a7c 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0f5f95), color-stop(100%,#004a7c)); /* Chrome,Safari4+ */

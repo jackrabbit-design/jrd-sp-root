@@ -12,7 +12,7 @@ get_header(); the_post(); ?>
 </div>
 
 <?php get_template_part('secondary-menu'); ?>
-    
+
 <div id="main">
     <div class="wrap clearfix">
 
@@ -20,8 +20,18 @@ get_header(); the_post(); ?>
 
             <?php $parent = $post->post_parent; ?>
 
+            <?php
+            $terms = get_the_terms($post->ID, 'news-types');
+            $ts = ''; $i = 1;
+            if($terms){
+                foreach($terms as $t){
+                    $ts .= $t->name . ($i++ < count($terms) ? ', ' : '');
+                }
+            };
+            ?>
+
             <h4><?php if($ts){ ?>
-                <i><?php echo $ts ?></i> |
+                <?php echo $ts ?> |
                 <?php } ?>
                 <?php echo get_the_date('F j, Y' ); ?>
            </h4>
