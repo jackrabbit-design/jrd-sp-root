@@ -6,7 +6,7 @@
             </div>
         </div>
 
-        <?php include (TEMPLATEPATH . '/secondary-menu.php'); ?>
+        <?php get_template_part('secondary-menu'); ?>
 
         <? $parent = $post->post_parent; ?>
 

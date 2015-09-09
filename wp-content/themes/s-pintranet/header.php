@@ -24,7 +24,7 @@
 	wp_head();
     ?>
 </head>
-<body>
+<body <?php body_class() ?>>
 
     <?php if(get_field('has_changed_password','user_'.get_current_user_id()) != true){ ?>
         <div style="display:none;">

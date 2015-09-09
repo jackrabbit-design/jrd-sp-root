@@ -1,14 +1,14 @@
 <?
-/* Template Name: Executive */    
+/* Template Name: Executive */
 get_header(); the_post(); ?>
 
 		<div id="pagetitle">
             <div class="wrap">
                 <h1><? the_title() ?></h1>
-            </div>         
+            </div>
         </div>
-        
-        <?php include (TEMPLATEPATH . '/secondary-menu.php'); ?>
+
+		<?php get_template_part('secondary-menu'); ?>
     
 
 
@@ -19,7 +19,7 @@ get_header(); the_post(); ?>
             <div id="wrap">
 
 	            <div id="comcontent">
-                
+
 	            	<?php if ( have_posts() ) : ?>
 
 
@@ -62,5 +62,5 @@ get_header(); the_post(); ?>
         </div>
     </div>
     <?php } wp_reset_query(); ?>
-    
+
 <? get_footer(); ?>

@@ -8,7 +8,7 @@ get_header(); the_post(); ?>
             </div>
         </div>
 
-        <?php include (TEMPLATEPATH . '/secondary-menu.php'); ?>
+		<?php get_template_part('secondary-menu'); ?>
 
 
 
