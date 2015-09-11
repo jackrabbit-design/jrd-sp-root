@@ -117,8 +117,22 @@ add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
 
 function my_login_stylesheet() {
    wp_enqueue_style( 'custom-login', home_url() . '/ui/css/login.css' );
+   wp_enqueue_script('jquery', home_url('url').'/ui/js/jquery.js', array(), null);
+   wp_enqueue_script( 'custom-login-js', home_url() . '/ui/js/login.js', array('jquery'), null );
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+function jrd_login_url(){
+	return get_bloginfo('url');
+}
+
+add_action( 'login_headerurl', 'jrd_login_url' );
+
+function jrd_login_title(){
+	return get_bloginfo('name');
+}
+
+add_action( 'login_headertitle', 'jrd_login_title' );
 
 function jrd_login() { ?>
 	<div class="footerwrap">

@@ -2,7 +2,7 @@
 
         <div id="pagetitle">
             <div class="wrap">
-                <h1><? the_title() ?></h1>
+                <h1><?php if(isset($_GET['pm'])) echo get_the_title($_GET['pm']) . '\'s '; ?><? the_title() ?></h1>
             </div>
         </div>
 
@@ -13,82 +13,54 @@
 
 	    <div class="main">
 	        <div class="wrap">
-                <p class="openp">Vestibulum tincidunt est a erat porttitor ultricies. Donec leo neque, mattis nec massa ut, posuere viverra mi. Nullam sed mi dapibus, ultrices sem ut, pellentesque lectus. In hac habitasse platea dictumst. Nullam ullamcorper euismod ligula. Sed scelerisque tristique enim at faucibus. </p>
+                <p class="openp"><?php the_field('intro_text'); ?></p>
 
-                <table id="projtable" class="sortable" cellspacing="0" width="100%">
-                    <thead>
-                        <tr>
-                            <th class="projth20">Client</th>
-                            <th class="projth20"> Location</th>
-                            <th class="projth50">Project</th>
-                            <th class="projth20">Project Manager</th>
+                <?php if(have_rows('projects')){ ?>
 
-                        </tr>
-                    </thead>
+                    <table id="projtable" class="sortable" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="projth20">Client</th>
+                                <th class="projth20"> Location</th>
+                                <th class="projth50">Project</th>
+                                <th class="projth20">Project Manager</th>
 
-                    <!--<tfoot>
-                        <tr>
-                            <th>Client</th>
-                            <th>Location</th>
-                            <th>Project</th>
-                            <th>Project Manager</th>
+                            </tr>
+                        </thead>
 
-                        </tr>
-                    </tfoot>-->
+                        <!--<tfoot>
+                            <tr>
+                                <th>Client</th>
+                                <th>Location</th>
+                                <th>Project</th>
+                                <th>Project Manager</th>
 
-                    <tbody>
-                        <tr>
-                            <td class="capitalize table20"><a href="#" class="exmore">Summit Healthcare</a></td>
-                            <td class="table20">New York, NY</td>
-
-                            <td class="table50"><span class="projname">Integrate Information Systems and Patient Data</span><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor augue et facilisis cursus consectetur gravida purus, ut mollis.</td>
-                            <td class="table20"><p>Mary Jo Whittaker</p>
-                                <p><a href="#" class="exmore">View Projects</a></p>
-                                <p><a href="#" class="exmore">View Bio</a></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="capitalize table20"><a href="#" class="exmore">Cerner</a></td>
-                            <td class="table20">Hingham, MA</td>
-
-                            <td class="table50"><span class="projname">Integrate Information Systems and Patient Data</span><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor augue et facilisis cursus consectetur gravida purus, ut mollis.</td>
-                            <td class="table20"><p>Mark Hammerson</p>
-                                <p><a href="#" class="exmore">View Projects</a></p>
-                                <p><a href="#" class="exmore">View Bio</a></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="capitalize table20"><a href="#" class="exmore">Summit Healthcare</a></td>
-                            <td class="table20">New York, NY</td>
-
-                            <td class="table50"><span class="projname">Integrate Information Systems and Patient Data</span><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor augue et facilisis cursus consectetur gravida purus, ut mollis.</td>
-                            <td class="table20"><p>Mary Jo Whittaker</p>
-                                <p><a href="#" class="exmore">View Projects</a></p>
-                                <p><a href="#" class="exmore">View Bio</a></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="capitalize table20"><a href="#" class="exmore">Cerner</a></td>
-                            <td class="table20">Hingham, MA</td>
-
-                            <td class="table50"><span class="projname">Integrate Information Systems and Patient Data</span><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor augue et facilisis cursus consectetur gravida purus, ut mollis.</td>
-                            <td class="table20"><p>Mark Hammerson</p>
-                                <p><a href="#" class="exmore">View Projects</a></p>
-                                <p><a href="#" class="exmore">View Bio</a></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="capitalize table20"><a href="#" class="exmore">Cerner</a></td>
-                            <td class="table20">Hingham, MA</td>
-
-                            <td class="table50"><span class="projname">Integrate Information Systems and Patient Data</span><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor augue et facilisis cursus consectetur gravida purus, ut mollis.</td>
-                            <td class="table20"><p>Mark Hammerson</p>
-                                <p><a href="#" class="exmore">View Projects</a></p>
-                                <p><a href="#" class="exmore">View Bio</a></p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                            </tr>
+                        </tfoot>-->
+                        <tbody>
+                            <?php while(have_rows('projects')){ the_row();
+                                $pm = get_sub_field('project_manager');
+                                if(isset($_GET['pm']) && $_GET['pm'] != $pm) continue;
+                                ?>
+                                <tr>
+                                    <td class="capitalize table20">
+                                        <?php if($url = get_sub_field('client_url')){ ?>
+                                            <a href="<?php echo $url ?>" class="exmore"><?php the_sub_field('client_name'); ?></a>
+                                        <?php }else{ ?>
+                                            <?php the_sub_field('client_name'); ?>
+                                        <?php } ?>
+                                    </td>
+                                    <td class="table20"><?php the_sub_field('project_location'); ?></td>
+                                    <td class="table50"><span class="projname"><?php the_sub_field('project_name'); ?></td>
+                                    <td class="table20"><p><?php echo get_the_title($pm) ?></p>
+                                        <p><a href="?pm=<?php echo $pm ?>" class="exmore">View Projects</a></p>
+                                        <p><a href="<?php echo get_permalink($pm) ?>" class="exmore">View Bio</a></p>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                <?php } ?>
 	        </div>
 	    </div>
 

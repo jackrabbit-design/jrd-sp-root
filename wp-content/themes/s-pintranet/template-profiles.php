@@ -15,7 +15,7 @@
             <div class="wrap">
                 <?php query_posts(array(
                     'post_type' => 'profile',
-                    'posts_per_page' => '20'
+                    'posts_per_page' => '-1'
                 )); if(have_posts()){ ?>
                     <table id="projtable" class="sortable" cellspacing="0" width="100%">
                         <thead>

@@ -28,7 +28,7 @@
 
     <?php if(get_field('has_changed_password','user_'.get_current_user_id()) != true){ ?>
         <div style="display:none;">
-            <form action="changepass.php" method="post" id="chgpass">
+            <form action="changepass.php?v=<?php echo date('is'); ?>" method="post" id="chgpass">
                 <h2>First time here?</h2>
                 <h3>Please update your password.</h3>
                 <input type="password" name="pass" />

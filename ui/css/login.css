@@ -109,7 +109,7 @@ font-weight: 800; font-style: italic; }
     .login h1 a:hover{color:#fff; font-weight:600;}
 
 
-    #login { margin:0; padding:100px 0 175px;; width:100%; background-image: -webkit-gradient(
+    #login { margin:0; padding:100px 0 175px;; width:100%; position:relative; overflow:hidden; background-image: -webkit-gradient(
 	linear,
 	left top,
 	left bottom,
@@ -126,7 +126,7 @@ background-image: linear-gradient(to bottom, #1B5F93 0%, #0E4C7B 100%);
     .login .message { border:none; background:none; text-align:center; color:#fff; color:rgba(255, 255, 255, 0.6); box-shadow:none; font-family:'ProximaNova'; padding-bottom:40px; }
 
     .login #login_error { width:350px; margin:0 auto; box-sizing:border-box; background:none; border:1px solid #78B750; color:#fff; margin-bottom:40px; }
-    .login #login_error strong { color:#78B750; } 
+    .login #login_error strong { color:#78B750; }
 
     #loginform, #lostpasswordform { width:350px; margin:0 auto; background:none; padding:0; box-shadow:none; overflow:visible; }
 
@@ -154,3 +154,20 @@ background-image: linear-gradient(to bottom, #1B5F93 0%, #0E4C7B 100%);
 	.jackrabbit a:hover {color:#76B84A;}
 	.foot1:after {content:""; white-space: pre;}
 	.foot2:after {content:""; white-space: pre;}
+
+    .circle { position:absolute; border-radius:100%; display:block; box-sizing:border-box; }
+
+    .c1 { width:108px; height:108px; margin-left:-54px; left:9%; top:-20px; background:#16AAE5; border:5px solid #015387; }
+    .c2 { width:30px; height:30px; margin-left:-15px; left:21%; top:48px; background:#76B84A; }
+    .c3 { width:74px; height:74px; margin-left:-37px; left:22%; top:185px; background:#1A6294; box-shadow:inset 0 0 0 3px #05426C, inset 0 0 0 6px #0F5E94; }
+    .c4 { width:74px; height:74px; margin-left:-37px; left:10%; top:350px; background:#006A9C; box-shadow:inset 0 0 0 4px #17AEDD; border:3px solid #006A9C; }
+    .c5 { width:30px; height:30px; margin-left:-15px; left:5.5%; top:430px; background:#76B84A; }
+    .c6 { width:220px; height:220px; margin-left:-110px;; left:0%; top:518px; background:#074871; box-shadow: inset 0 0 0 3px #76B84A; border:15px solid #074871; z-index:10; }
+    .c7 { width:74px; height:74px; margin-left:-37px; left:5.5%; top:693px; background:#006A9C; box-shadow:inset 0 0 0 4px #17AEDD; border:3px solid #006A9C; }
+    .c8 { width:74px; height:74px; margin-left:-37px; left:10%; top:750px; background:#1A6294; box-shadow:inset 0 0 0 3px #05426C, inset 0 0 0 6px #014C7E; }
+    .c9 { width:74px; height:74px; margin-right:-37px; right:2.7%; top:59px; background:#1A6294; box-shadow:inset 0 0 0 3px #05426C, inset 0 0 0 6px #0F5E94; }
+    .c10 { width:108px; height:108px; margin-right:-54px; right:-2.6%; top:372px; background:#16AAE5; border:5px solid #015387; }
+    .c11 { width:120px; height:120px; margin-right:-60px;; right:9.3%; top:536px; background:#074871; box-shadow: inset 0 0 0 3px #76B84A; border:7px solid #074871; z-index:10; }
+    .c12 { width:82px; height:82px; margin-right:-41px; right:10.8%; top:645px; background:#006A9C; box-shadow:inset 0 0 0 4px #17AEDD; border:3px solid #006A9C; }
+    .c13 { width:36px; height:36px; margin-right:-18px; right:5.5%; top:683px; background:#76B84A; box-shadow:inset 0 0 0 2px #104F7E; border:1px solid #17AEDD; } 
+    .c14 {}
