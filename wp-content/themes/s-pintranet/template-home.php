@@ -20,9 +20,9 @@ get_header(); the_post();
 					 <?php $p = get_field('andy_&_steve_post'); $post = get_post($p); setup_postdata($post); ?>
 					<div class="previewh1">
 
-						<h3><?php $wp_query->query_vars['taxonomy_name'];?></h3>
+						<h3>From Andy &amp; Steve</h3>
                         <h4><?php the_date(); ?></h4>
-                        <h2><?php echo get_the_title( $ID ); ?> </h2>
+                        <h2><?php echo get_the_title(); ?> </h2>
                         <p><?php echo strip_tags(get_the_excerpt()) ?></p>
                          <a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
            		 	</div>
@@ -40,20 +40,18 @@ get_header(); the_post();
 	            <div class="midline">
 					<?php $p = get_field('featured_update_post'); $post = get_post($p); setup_postdata($post); ?>
 	                <div class="previewh">
-					<?php $term =	$wp_query->queried_object;
-							echo '<h3>'.$term->name.'</h3>';?>
+						<h3>Featured Update</h3>
                         <h4><?php the_date(); ?></h4>
-                        <h2><?php echo get_the_title( $ID ); ?> </h2>
+                        <h2><?php echo get_the_title( ); ?> </h2>
                         <p><?php echo strip_tags(get_the_excerpt()) ?></p>
                          <a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
 	                </div>
 					<?php wp_reset_postdata(); ?>
 	                <div class="previewh">
 	                <?php $p = get_field('company_news_post'); $post = get_post($p); setup_postdata($post); ?>
-					<?php $term =	$wp_query->queried_object;
-							echo '<h3>'.$term->name.'</h3>';?>
+						<h3>Company News</h3>
                         <h4><?php the_date(); ?></h4>
-                        <h2><?php echo get_the_title( $ID ); ?> </h2>
+                        <h2><?php echo get_the_title( ); ?> </h2>
                         <p><?php echo strip_tags(get_the_excerpt()) ?></p>
                          <a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
 	                </div>
