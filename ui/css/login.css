@@ -128,7 +128,7 @@ background-image: linear-gradient(to bottom, #1B5F93 0%, #0E4C7B 100%);
     .login #login_error { width:350px; margin:0 auto; box-sizing:border-box; background:none; border:1px solid #78B750; color:#fff; margin-bottom:40px; }
     .login #login_error strong { color:#78B750; }
 
-    #loginform, #lostpasswordform { width:350px; margin:0 auto; background:none; padding:0; box-shadow:none; overflow:visible; }
+    #loginform, #lostpasswordform { width:350px; margin:0 auto; background:none; padding:0; box-shadow:none; overflow:visible; position: relative; z-index:100;}
 
     .login label, .forgetmenot label { font:600 14px ProximaNova; color:#74B943; text-transform: uppercase; }
 
@@ -169,5 +169,13 @@ background-image: linear-gradient(to bottom, #1B5F93 0%, #0E4C7B 100%);
     .c10 { width:108px; height:108px; margin-right:-54px; right:-2.6%; top:372px; background:#16AAE5; border:5px solid #015387; }
     .c11 { width:120px; height:120px; margin-right:-60px;; right:9.3%; top:536px; background:#074871; box-shadow: inset 0 0 0 3px #76B84A; border:7px solid #074871; z-index:10; }
     .c12 { width:82px; height:82px; margin-right:-41px; right:10.8%; top:645px; background:#006A9C; box-shadow:inset 0 0 0 4px #17AEDD; border:3px solid #006A9C; }
-    .c13 { width:36px; height:36px; margin-right:-18px; right:5.5%; top:683px; background:#76B84A; box-shadow:inset 0 0 0 2px #104F7E; border:1px solid #17AEDD; } 
+    .c13 { width:36px; height:36px; margin-right:-18px; right:5.5%; top:683px; background:#76B84A; box-shadow:inset 0 0 0 2px #104F7E; border:1px solid #17AEDD; }
     .c14 {}
+
+    .i1 { width:220px; height:220px; border:15px solid #074871; top:164px; left:15%; margin-left:-110px; overflow:hidden; }
+    .i2 { width:310px; height:310px; border:2px solid #76B84A; top:426px; left:24%; margin-left:-155px; overflow:hidden; padding:15px }
+    .i3 { width:372px; height:372px; border:2px solid #76B84A; top:124px; right:15%; margin-right:-186px; overflow:hidden; padding:15px }
+    .i4 { width:214px; height:214px; border:4px solid #05426C; top:547px; right:25%; margin-right:-107px; overflow:hidden; padding:5px }
+
+    .i1, .i2, .i3, .i4 { z-index:12; }
+    .i2 img, .i3 img, .i4 img { border-radius:100%; }

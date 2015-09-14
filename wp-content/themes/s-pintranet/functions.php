@@ -38,6 +38,10 @@ set_post_thumbnail_size( 64, 64, true );
 add_image_size( 'pro-pic', 154, 154, true);
 add_image_size( 'general-side', 400, 290, true);
 add_image_size( 'three-col', 330, 163, true);
+add_image_size( 'login-1', 190, 190, true);
+add_image_size( 'login-2', 280, 280, true);
+add_image_size( 'login-3', 340, 340, true);
+add_image_size( 'login-4', 196, 196, true);
 
 /* Declare Nav Menu Areas */
 if ( function_exists( 'register_nav_menus' ) ) {
@@ -135,7 +139,12 @@ function jrd_login_title(){
 add_action( 'login_headertitle', 'jrd_login_title' );
 
 function jrd_login() { ?>
-	<div class="footerwrap">
+	<div class="footerwrap"
+		data-img1="<?php $img = get_field('login_image_1','options'); echo $img['sizes']['login-1']; ?>"
+		data-img2="<?php $img = get_field('login_image_2','options'); echo $img['sizes']['login-2']; ?>"
+		data-img3="<?php $img = get_field('login_image_3','options'); echo $img['sizes']['login-3']; ?>"
+		data-img4="<?php $img = get_field('login_image_4','options'); echo $img['sizes']['login-4']; ?>"
+		>
         <div id="footer">
 	        <div id="companyinfo">
 	            <div class="footspacer"></div>
