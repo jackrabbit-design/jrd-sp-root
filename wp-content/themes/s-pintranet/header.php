@@ -49,7 +49,7 @@
                 <div id="usermenu">
                     <ul class"usermenuitems">
                         <?php global $user; $user = get_current_user_id(); $uData = get_user_meta($user); ?>
-                        <li><a href="#">Hello, <?php echo $uData['first_name'][0]; ?></a></li>
+                        <li><a href="<?php echo get_permalink(get_field('associated_profile','user_'.get_current_user_id())) ?>">Hello, <?php echo $uData['first_name'][0]; ?></a></li>
                         <li><a href="<?php echo wp_logout_url(); ?>">Logout</a></li>
                         <li id='headsearch' class='headsearch' >
                             <form role="search" method="get" id="searchhead" class="headsearch" action="<?php echo esc_url( home_url( '/' ) ); ?>">
