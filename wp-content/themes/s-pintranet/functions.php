@@ -139,7 +139,7 @@ function jrd_login_title(){
 add_action( 'login_headertitle', 'jrd_login_title' );
 
 function jrd_login() { ?>
-	<div class="footerwrap"
+	<div class="footerwrap clearfix"
 		data-img1="<?php $img = get_field('login_image_1','options'); echo $img['sizes']['login-1']; ?>"
 		data-img2="<?php $img = get_field('login_image_2','options'); echo $img['sizes']['login-2']; ?>"
 		data-img3="<?php $img = get_field('login_image_3','options'); echo $img['sizes']['login-3']; ?>"
@@ -555,3 +555,18 @@ function restrict_non_Admins(){
 
 add_action('wp_ajax_query-attachments','restrict_non_Admins',1);
 add_action('wp_ajax_nopriv_query-attachments','restrict_non_Admins',1);
+
+// HIDE WP ADMIN FROM USER ROLE
+
+! defined( 'ABSPATH' ) AND exit;
+
+
+function prevent_access()
+{
+    $redirect = isset( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : home_url( '/' );
+    if (
+        current_user_can( 'user' )
+    )
+        exit( wp_redirect( $redirect ) );
+}
+add_action( 'admin_init', 'prevent_access', 100 );

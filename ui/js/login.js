@@ -112,5 +112,7 @@ jQuery(function($){
         });
     });
 
-    $.plax.enable();
+    $(document).ready(function(){
+        $.plax.enable();
+    });
 });

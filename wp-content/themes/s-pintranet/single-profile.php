@@ -84,7 +84,7 @@
     			<div class="sidebar empquote">
     				<blockquote><?php the_field('quote'); ?>&rdquo;</blockquote>
     			</div>
-                <a href="#" class="exmore articleback">&lt; Back to All</a>
+                <a href="<?php echo get_permalink(11) ?>" class="exmore articleback">&lt; Back to All</a>
         	</div>
         </div>
     <?php } ?>

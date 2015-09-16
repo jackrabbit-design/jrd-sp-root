@@ -46,8 +46,11 @@
 
                                     <td class="table20"><?php the_field('location'); ?></td>
                                     <td class="table20">
-                                        <li class="heading icon-envelope"><a href="mailto:<?php the_field('email'); ?>">Send Email</a></li>
-                                        <li class="heading icon-im"><?php the_field('im'); ?></li>
+                                        <?php if(get_field('email')){ ?>
+                                            <li class="heading icon-envelope"><a href="mailto:<?php the_field('email'); ?>">Send Email</a></li>
+                                        <?php } if(get_field('im')){ ?>
+                                            <li class="heading icon-im"><a href="aim:goim?screenname=<?php echo str_replace(' ','',get_field('im')); ?>"><?php the_field('im'); ?></a></li>
+                                        <?php } ?>
                                     </td>
                                 </tr>
                             <?php } ?>
