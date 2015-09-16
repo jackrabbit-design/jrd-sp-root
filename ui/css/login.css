@@ -130,7 +130,7 @@ background-image: linear-gradient(to bottom, #1B5F93 0%, #0E4C7B 100%);
     .login #login_error { width:350px; margin:0 auto; box-sizing:border-box; background:none; border:1px solid #78B750; color:#fff; margin-bottom:40px; }
     .login #login_error strong { color:#78B750; }
 
-    #loginform, #lostpasswordform { width:350px; margin:0 auto; background:none; padding:0; box-shadow:none; overflow:visible; position: relative; z-index:100;}
+    #loginform, #lostpasswordform, #resetpassform { width:350px; margin:0 auto; background:none; padding:0; box-shadow:none; overflow:visible; position: relative; z-index:100;}
 
     .login label, .forgetmenot label { font:600 14px ProximaNova; color:#74B943; text-transform: uppercase; }
 
@@ -139,8 +139,10 @@ background-image: linear-gradient(to bottom, #1B5F93 0%, #0E4C7B 100%);
     .forgetmenot { display:none; }
 
     #login form p.submit { text-align:center; margin:20px 0 30px; }
-    #wp-submit { padding:0 50px; display:inline-block; border-radius:18px; background:#78B750; font:16px/36px ProximaNova; color:#fff; text-transform: uppercase; float:none; height:36px; box-shadow:0 1px 3px rgba(0,0,0,0.3); }
-    #wp-submit:hover { background:#fff; color:#78B750; }
+    #wp-submit, .reset-pass a { padding:0 50px; display:inline-block; border-radius:18px; background:#78B750; font:16px/36px ProximaNova; color:#fff; text-transform: uppercase; float:none; height:36px; box-shadow:0 1px 3px rgba(0,0,0,0.3); }
+    #wp-submit:hover, .reset-pass a:hover { background:#fff; color:#78B750; }
+
+    .reset-pass a { display: block; width: 60px; margin: 20px auto 0; text-decoration: none; }
 
     .login #backtoblog a, .login #nav a { color:#78B750; font-family:'ProximaNova'; font-weight:600; font-size:15px; }
 
@@ -183,3 +185,9 @@ background-image: linear-gradient(to bottom, #1B5F93 0%, #0E4C7B 100%);
 
     .i1, .i2, .i3, .i4 { z-index:12; }
     .i2 img, .i3 img, .i4 img { border-radius:100%; }
+
+    .login #pass-strength-result { margin:0 auto; display:block; float:none; width:100%; box-sizing:border-box; }
+
+    .login .message { position: relative; z-index:100; }
+
+    .indicator-hint { text-align:center; color:rgba(255, 255, 255, 0.6); margin-top:20px; }

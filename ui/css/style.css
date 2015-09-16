@@ -436,6 +436,7 @@ input[type=submit]:hover, button:hover {  }
 	.preview h2 {padding-top:8px;}
 	.preview p {padding-top:10px;}
 	.exmore { font-size: 14px; color: #76B84A; letter-spacing: 0.6px; line-height: 28px; text-transform: uppercase;}
+	.exmore + small { font-size:13px; }
 
 	.load-more { border-top:1px solid #ccc; padding-top:20px; }
 	.load-more a { font-size: 14px; color: #76B84A; letter-spacing: 0.6px; line-height: 28px; text-transform: uppercase; }

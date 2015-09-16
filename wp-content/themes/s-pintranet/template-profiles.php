@@ -41,7 +41,10 @@
                         <tbody>
                             <?php while(have_posts()){ the_post(); ?>
                                 <tr>
-                                    <td class="capitalize table20"><a href="<?php the_permalink() ?>" class="exmore"><?php the_title(); ?></a></td>
+                                    <td class="capitalize table20">
+                                        <a href="<?php the_permalink() ?>" class="exmore"><?php the_title(); ?></a>
+                                        <?php if(get_current_user_id() == get_field('associated_user')['ID']) echo '<small>(YOU)</small>'; ?>
+                                    </td>
                                     <td class="table20"><?php the_field('job_title'); ?></td>
 
                                     <td class="table20"><?php the_field('location'); ?></td>
