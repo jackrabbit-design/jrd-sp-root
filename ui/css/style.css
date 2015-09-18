@@ -268,7 +268,7 @@ input[type=submit]:hover, button:hover {  }
 	.logomargins {float:left; margin:17px auto; width:20%; text-align: center; height:76px;}
 	.logomargins img {max-width:100%;}
 	.headsearch input { background: #0A466F; box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.20); border-radius: 40px; color:#fff; border:none; padding:5px; }
-	#usermenu { float:right; width:70%; margin-top:17px; font-size:13px; font-weight: 300; line-height: 16px; padding-bottom:20px;}
+	#usermenu { float:right; width:70%; margin-top:17px; font-size:13px; font-weight: 300; line-height: 16px; padding-bottom:14px;}
 	#usermenu a { color:#fff; }
 	#usermenu a:hover { color:#76B84A;}
 	#usermenu ul { text-align: right;}
@@ -279,6 +279,12 @@ input[type=submit]:hover, button:hover {  }
 	#nav { position: relative; z-index: 597; float: right; }
 	#nav li { float: left; vertical-align: middle; zoom: 1; }
 	#nav li a { color:#fff; padding: 0 20px; display: inline-block; font-size:15px; font-weight:400; line-height: 18px; text-decoration: none; }
+
+	#nav>li.current-menu-ancestor,
+		#nav>li.current-menu-item { position: relative;}
+	#nav>li.current-menu-ancestor:after,
+		#nav>li.current-menu-item:after { content:''; position: absolute; width:6px; height:6px; display:block; border-radius:3px; background:#76B84A; left:50%; margin-left:-3px; bottom:-10px; }
+
 	#nav li:hover { position: relative; z-index: 599; cursor: default; }
 	#nav > li:hover > a { color:#76B84A; }
 	#nav ul { z-index:100; display:none; position: absolute; top:100%; width: 196px; background-color: #084671; padding:0; border-radius:5px; border-bottom:2px solid #05314F; left: 1.5%;}
@@ -293,7 +299,7 @@ input[type=submit]:hover, button:hover {  }
 	#nav ul ul:before { box-shadow: none; }
 	#nav > li:last-child > ul { left: auto; right: 0; }
 	#nav li:hover > ul {display:block;}
-	#nav .current-menu-item>a {color:#76B84A}
+	#nav li ul .current-menu-item>a {color:#76B84A}
 	.nav-toggle.mobile {display:none;}
 	#headmenu {visibility: hidden;}
 	#headmenu2 {visibility: inherit;}
@@ -352,6 +358,7 @@ input[type=submit]:hover, button:hover {  }
 	#pagetitle h1 { width:1180; margin:auto; text-align: center; padding-bottom: 10px;  }
 	#pagetitle h4 {text-align: center;}
 	#pagetitle a { background: #76B84A; box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.10); border-radius: 40px; font-size: 16px; color: #FFFFFF; letter-spacing: 0.66px; line-height: 20px; width: 100px; padding: 6px 32px; }
+	#pagetitle a+a { margin-left:10px; }
 	#pagetitle a:hover { background: #fff; color:#76B84A;}
 	#secondarymenu { width:100%; background: #76B84A; height:60px; }
 	#secondarymenu ul { max-width:1180px; text-align:center; height:60px; font-size:0;}
@@ -360,11 +367,11 @@ input[type=submit]:hover, button:hover {  }
 	#secondarymenu li { display:inline-block; position: relative;  border-right: 1px #fff solid; font-size: 20px; font-weight: 300; height:60px; padding: 12px 1.8% 0 7.4% }
 	#secondarymenu li:hover { display:inline-block; background-color:#6AA542; color:#fff; }
 	#secondarymenu li:last-child { border-right:0px; }
-	#secondarymenu .current-menu-item {background-color: #fff;}
-	#secondarymenu .current-menu-item a {color:#76B84A;}
-	#secondarymenu .current-menu-item:before {color:#76B84A;}
 	#secondarymenu li:hover a {color:#fff;}
 	#secondarymenu li:hover:before {color:#fff;}
+	#secondarymenu li.current-menu-item {background-color: #fff;}
+	#secondarymenu li.current-menu-item a {color:#76B84A;}
+	#secondarymenu li.current-menu-item:before {color:#76B84A;}
 
 
 /*end header styles*/
@@ -438,6 +445,8 @@ input[type=submit]:hover, button:hover {  }
 	.exmore { font-size: 14px; color: #76B84A; letter-spacing: 0.6px; line-height: 28px; text-transform: uppercase;}
 	.exmore + small { font-size:13px; }
 
+	.exmore button {background:none; color:inherit; }
+
 	.load-more { border-top:1px solid #ccc; padding-top:20px; }
 	.load-more a { font-size: 14px; color: #76B84A; letter-spacing: 0.6px; line-height: 28px; text-transform: uppercase; }
 
@@ -459,6 +468,7 @@ input[type=submit]:hover, button:hover {  }
 /* project styles */
 	.openp { margin:30px 0;}
 	#projtable {border:1px solid #F7F7F7; font-size:16px; margin:30px auto; }
+	#projtable  tr th { cursor: pointer;}
 	.projth20 { font-size:16px; width:18%; background: #0A5385; text-align: left;  color:#fff; font-weight:500; vertical-align: middle;padding-left:3%; padding-top:5px; padding-bottom:5px; height:60px;  }
 	.projth50 { font-size:16px; width:46%; background: #0A5385; text-align: left;  color:#fff; font-weight:500; vertical-align: middle;padding-left:3%; padding-top:5px; padding-bottom:5px; }
 	.table20 {width:18%;  text-align: left; vertical-align: middle;padding-left:3%; padding-top:10px; padding-bottom:10px; color:#7B7B7B; vertical-align: top;}
@@ -677,6 +687,10 @@ input[type=submit]:hover, button:hover {  }
 	.event h4:last-child {font-weight: 300;}
 	.event p {padding:18px 0;}
 	.event li {display:inline-block; padding-right:30px;}
+
+	.event .addthisevent-drop { background:#fff url("http://addthisevent.com/gfx/icon-calendar-t1.png") no-repeat scroll 9px 50%; border:none; color: #76B84A !important; font-family:ProximaNova; font-weight:400;text-transform:uppercase; font-size:14px; }
+	.event .addthisevent-drop:hover { border:none; color:#0A5385 !important; font-weight:400; }
+
 	.calmore {background-color:#76B84A; padding:7px 24px; color: #fff; font-size:16px; border-radius:20px;}
 	.calmore:hover {background-color:#0A5385;}
 	.company-event {font-size: 14px; color: #BF4D6A; line-height: 17px; font-weight: 500;}
@@ -765,12 +779,16 @@ input[type=submit]:hover, button:hover {  }
 	.newpost {background: #76B84A; border-radius: 40px; font-size: 16px; color: #FFFFFF; letter-spacing: 0.66px; line-height: 20px; float:right; padding:6px 32px;}
 	.newpost:hover {  background:#0A5385; }
 	.msgsearch { float:left; }
+	.msgsearch .clearsearch { cursor:pointer; }
+	.msgsearch .clearsearch img { position: relative; top:4px; margin-right:8px;}
+	.msgsearch .clearsearch:hover { color:#0A5385; }
 	.msgsearch li {display:inline-block; padding-right:10px;}
 	.msgsearch li {vertical-align: middle;}
 	.msgsearch img {transform: rotate(45deg);}
-	.msgsearch input { background: #fff; box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.20); border-radius: 40px; color:#484848; border:none; padding:5px; width:200px; height:30px; }
+	.msgsearch input { background: #fff; box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.20); border-radius: 40px; color:#484848; border:none; padding:5px 15px; width:200px; height:30px; font-size:13px; }
 	#messagetable {border:1px solid #F7F7F7; font-size:16px; margin:30px auto; }
 	#messagetable a {color:#76B84A;}
+	#messagetable a:hover {color:#0A5385;}
 	.messageth60 { width:60%; background: #0A5385; text-align: left;  color:#fff; font-weight:500; vertical-align: middle;padding-left:3%; padding-top:15px; padding-bottom:15px; }
 	.messageth15 { width:17%; background: #0A5385; text-align: left;  color:#fff; font-weight:500; vertical-align: middle;padding-left:3%; padding-top:15px; padding-bottom:15px; }
 	.messageth10 {width:6%; background: #0A5385; text-align: left;  color:#fff; font-weight:500; vertical-align: middle;padding-left:3%; padding-top:15px; padding-bottom:15px;}
@@ -835,7 +853,7 @@ input[type=submit]:hover, button:hover {  }
 	.gradbot {opacity: 0.2; transform: rotate(-180deg); background-image: linear-gradient(-180deg, #000000 0%, rgba(7,9,11,0.00) 100%); height: 6px; position: relative; top: 30px;}
 	.heading {font-weight:500; font-size: 16px; color: #0A5385; letter-spacing: 0.69px; line-height: 20px;}
 	.profileimg {float:left; width:15%;}
-	.profileimg .circle { width:150px; max-width:100%; border:2px solid #BDBDBD; border-radius:100%; overflow:hidden; }
+	.profileimg .circle { width:auto; max-width:100%; border:2px solid #BDBDBD; border-radius:100%; overflow:hidden; display:inline-block; }
 	.profileimg img {max-width:100%;  display:block; height:auto;}
 	.profileinfo {float:right; width:80%; font-weight:300; font-size:16px; color:#7B7B7B;}
 	.outterli {width:31%; display:inline-block; padding:25px 0 0;}
@@ -843,7 +861,7 @@ input[type=submit]:hover, button:hover {  }
 	.profield a {font-weight:500; color:#76B84A;}
 	.profield a:hover { color:#0A5385; }
 
-	#edit { width:728px; margin:0 auto 75px; }
+	#edit { width:728px; margin:20px auto 75px; }
 	#edit .acf-field { border:none !important; }
 	#edit .acf-field .acf-label { margin:0 0 5px; }
 	#edit .acf-field .acf-label label { font:500 18px 'ProximaNova'; color:#76B84A; }
@@ -1028,7 +1046,7 @@ input[type=submit]:hover, button:hover {  }
 		#doctable  tr td { display: block; width: 100% !important; border-bottom: none; padding: 2px 0 0 0; }
 		#doctable  tr td strong { display: block; width: 100%; }
 		#doctable  tr td a { display: block; width: 100%; }
-		#projtable  {border:none;}
+		#projtable  {border:none; }
 		#projtable thead { display: none; border:none;}
 		#projtable  tr { display: inline-block; width: 100%; box-sizing: border-box;  padding: 15px; }
 		#projtable  tr td { display: block; width: 100% !important; border-bottom: none;}

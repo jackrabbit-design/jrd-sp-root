@@ -17,11 +17,20 @@
                 <input tabindex="<?php bbp_tab_index(); ?>" type="text" value="<?php echo esc_attr( bbp_get_search_terms() ); ?>" name="bbp_search" id="bbp_search" />
 				<input type="hidden" name="action" value="bbp-search-request" />
             </li>
-            <li><img src="<?php bloginfo('url') ?>/ui/images/dropdown.png" width="18" /></li>
-            <li class="exmore">Clear search</li>
+            <?php if($post->ID != 151){ ?>
+                <li class="clearsearch exmore"><img src="<?php bloginfo('url') ?>/ui/images/dropdown.png" width="18" />Clear search</li>
+            <?php }else{ ?>
+                <li class=" exmore">Search</li>
+            <?php } ?>
         </ul>
     </form>
     <div>
         <a href="" class="newpost">Start New Topic</a>
     </div>
 </div>
+
+<script>
+jQuery('.clearsearch').on('click',function(){
+    window.location.href = '<?php echo get_permalink(151) ?>';
+});
+</script>

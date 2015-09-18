@@ -7,8 +7,7 @@
  * @subpackage Theme
  */
 
-?>
-
+ /* ?>
 <div class="bbp-reply-header">
 
 	<div class="bbp-meta">
@@ -62,3 +61,4 @@
 
 </div><!-- #post-<?php bbp_reply_id(); ?> -->
 
+*/

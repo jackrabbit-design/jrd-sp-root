@@ -1,6 +1,6 @@
 <?php
-if(get_field('external_link')){
-    wp_redirect(get_field('external_link'));
+if(get_field('external_url')){
+    wp_redirect(get_field('external_url'));
     exit;
 }
 get_header(); the_post(); ?>

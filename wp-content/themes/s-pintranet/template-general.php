@@ -13,6 +13,9 @@ get_header(); the_post(); ?>
 
 	<div id="main">
 		<div id="maincontent">
+
+			<?php the_content(); ?>
+
 			<?php if(have_rows('content')){
 				while(have_rows('content')){ the_row();
 					if(get_row_layout() == 'tabbed-content'){ ?>
@@ -43,7 +46,9 @@ get_header(); the_post(); ?>
 					                        </div>
 
 					                        <div class="tabsidebar">
-					                            <img src="<?php $img = get_sub_field('image'); echo $img['sizes']['general-side'] ?>" alt="" / >
+												<?php if($img = get_sub_field('image')){ ?>
+						                            <img src="<?php echo $img['sizes']['general-side'] ?>" alt="" / >
+												<?php } ?>
 					                            <p><?php the_sub_field('caption'); ?></p>
 					                        </div>
 									    </div>
@@ -70,7 +75,7 @@ get_header(); the_post(); ?>
 				                            <td class="table10"><?php the_sub_field('date'); ?></td>
 				                            <td class="table70"><?php the_sub_field('doc-title'); ?></td>
 				                            <td class="table10"><?php the_sub_field('doc-type'); ?></td>
-				                            <td class="table10"><a href="<?php $dl = get_sub_field('download'); echo $dl['url'] ?>" download class="exmore">Download</a></td>
+				                            <td class="table10"><a target="_blank" href="<?php $dl = get_sub_field('download'); echo $dl['url'] ?>" download class="exmore">Download</a></td>
 				                        </tr>
 									<?php } ?>
 			                    </tbody>

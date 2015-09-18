@@ -8,10 +8,18 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="MSSmartTagsPreventParsing" content="true" />
-    <title><?php wp_title(); ?></title>
+    <?php
+    $title = '';
+    if(!is_front_page()){
+        $title .= get_the_title() . " | ";
+    };
+    $title .= get_bloginfo('name');
+    ?>
+    <title><?php echo $title ?></title>
     <link type="text/plain" rel="author" href="<? bloginfo('url') ?>/authors.txt" />
     <link type="image/x-icon" rel="shortcut icon" href="<? bloginfo('url') ?>/favicon.png" />
     <?php

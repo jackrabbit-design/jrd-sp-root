@@ -52,9 +52,11 @@
                                     </td>
                                     <td class="table20"><?php the_sub_field('project_location'); ?></td>
                                     <td class="table50"><span class="projname"><?php the_sub_field('project_name'); ?></td>
-                                    <td class="table20"><p><?php echo get_the_title($pm) ?></p>
-                                        <p><a href="?pm=<?php echo $pm ?>" class="exmore">View Projects</a></p>
-                                        <p><a href="<?php echo get_permalink($pm) ?>" class="exmore">View Bio</a></p>
+                                    <td class="table20">
+                                        <?php if($pm){ ?>
+                                            <p><a href="<?php echo get_permalink($pm) ?>" class="exmore"><?php echo get_the_title($pm) ?></a></p>
+                                            <p><a href="?pm=<?php echo $pm ?>" class="exmore">View Projects</a></p>
+                                        <?php } ?>
                                     </td>
                                 </tr>
                             <?php } ?>

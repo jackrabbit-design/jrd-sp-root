@@ -13,7 +13,7 @@
                         <a href="<?php echo $resume['url'] ?>" download>View R&eacute;sum&eacute;</a>
                     <?php } ?>
                     <?php if($user == $me['ID']){
-                        echo '<a href="'.the_permalink().'?edit" style="margin-left:10px">Edit Profile</a>';
+                        echo '<a href="'.the_permalink().'?edit">Edit Profile</a>';
                     }
                     ?>
                 </div>
@@ -34,44 +34,54 @@
     				</div>
             		<div class="profileinfo">
     	        		<ul>
-    	        			<li class="outterli">
-    	        				<ul>
-    	        					<li class="heading icon-envelope">Email</li>
-    	        					<li class="profield"><a href="mailto:<?php the_field('email'); ?>">Send Email</a></li>
-    	        				</ul>
-    	        			</li>
-    	        			<li class="outterli">
-    	        				<ul>
-    	        					<li class="heading icon-phone">Phone Number</li>
-    	        					<li class="profield"><?php the_field('phone_number'); ?></li>
-    	        				</ul>
-    	        			</li>
-    	        			<li class="outterli">
-    	        				<ul>
-    	        					<li class="heading icon-im">IM</li>
-    	        					<li class="profield"><?php the_field('im'); ?></li>
-    	        				</ul>
-    	        			</li>
+                            <?php if(get_field('email')){ ?>
+        	        			<li class="outterli">
+        	        				<ul>
+        	        					<li class="heading icon-envelope">Email</li>
+        	        					<li class="profield"><a href="mailto:<?php the_field('email'); ?>">Send Email</a></li>
+        	        				</ul>
+        	        			</li>
+                            <?php } if(get_field('phone_number')){ ?>
+        	        			<li class="outterli">
+
+        	        				<ul>
+        	        					<li class="heading icon-phone">Phone Number</li>
+        	        					<li class="profield"><?php the_field('phone_number'); ?></li>
+        	        				</ul>
+                                </li>
+                            <?php } if(get_field('im')){ ?>
+        	        			<li class="outterli">
+        	        				<ul>
+        	        					<li class="heading icon-im">IM</li>
+        	        					<li class="profield"><?php the_field('im'); ?></li>
+        	        				</ul>
+        	        			</li>
+                            <?php } ?>
     	        		</ul>
     	        		<ul>
-    	        			<li class="outterli">
-    	        				<ul>
-    	        					<li class="heading icon-gift">Birthday</li>
-    	        					<li class="profield"><?php the_field('birthday'); ?></li>
-    	        				</ul>
-    	        			</li>
-    	        			<li class="outterli">
-    	        				<ul>
-    	        					<li class="heading icon-anniversary">Anniversary</li>
-    	        					<li class="profield"><?php the_field('anniversary'); ?></li>
-    	        				</ul>
-    	        			</li>
-    	        			<li class="outterli">
-    	        				<ul>
-    	        					<li class="heading icon-location">Location</li>
-    	        					<li class="profield"><?php the_field('location'); ?></li>
-    	        				</ul>
-    	        			</li>
+                            <?php if(get_field('birthday')){ ?>
+
+        	        			<li class="outterli">
+        	        				<ul>
+        	        					<li class="heading icon-gift">Birthday</li>
+        	        					<li class="profield"><?php the_field('birthday'); ?></li>
+        	        				</ul>
+        	        			</li>
+                            <?php } if(get_field('anniversary')){ ?>
+        	        			<li class="outterli">
+        	        				<ul>
+        	        					<li class="heading icon-anniversary">Anniversary</li>
+        	        					<li class="profield"><?php the_field('anniversary'); ?></li>
+        	        				</ul>
+        	        			</li>
+                            <?php } if(get_field('location')){ ?>
+        	        			<li class="outterli">
+        	        				<ul>
+        	        					<li class="heading icon-location">Location</li>
+        	        					<li class="profield"><?php the_field('location'); ?></li>
+        	        				</ul>
+        	        			</li>
+                            <?php } ?>
     	        		</ul>
     	        	</div>
             	</div>
@@ -84,7 +94,7 @@
     			<div class="sidebar empquote">
     				<blockquote><?php the_field('quote'); ?>&rdquo;</blockquote>
     			</div>
-                <a href="<?php echo get_permalink(11) ?>" class="exmore articleback">&lt; Back to All</a>
+                <a href="<?php echo get_permalink(11) ?>" class="exmore articleback">&lt; View All Employees</a>
         	</div>
         </div>
     <?php } ?>

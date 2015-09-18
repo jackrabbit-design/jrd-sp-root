@@ -96,13 +96,11 @@ font-weight: 800; font-style: italic; }
 
     html, body{background:#f3f3f3;color:#444;}
 
+    a { color:#16AAE5 }
+
     .wp-core-ui .button-primary{color:#fff;}
     .wp-core-ui .button-primary:hover{}
 
-    .login label, .forgetmenot label{color:#10887E;}
-
-    .wp-core-ui .button-primary{background:#D14124;}
-    .wp-core-ui .button-primary:hover{background:#D5543A;}
 
     body.login #login h1 a{background:url(../images/logo-login.png) no-repeat;width:290px;height:133px; margin-bottom:65px;}
 
@@ -130,7 +128,9 @@ background-image: linear-gradient(to bottom, #1B5F93 0%, #0E4C7B 100%);
     .login #login_error { width:350px; margin:0 auto; box-sizing:border-box; background:none; border:1px solid #78B750; color:#fff; margin-bottom:40px; }
     .login #login_error strong { color:#78B750; }
 
-    #loginform, #lostpasswordform, #resetpassform { width:350px; margin:0 auto; background:none; padding:0; box-shadow:none; overflow:visible; position: relative; z-index:100;}
+    #loginform, #lostpasswordform, #resetpassform { width:350px; margin:0 auto; background:none; padding:0; box-shadow:none; overflow:visible; position: relative !important; z-index:100;}
+
+    .login #login_error { position: relative; z-index:100; }
 
     .login label, .forgetmenot label { font:600 14px ProximaNova; color:#74B943; text-transform: uppercase; }
 
@@ -188,6 +188,6 @@ background-image: linear-gradient(to bottom, #1B5F93 0%, #0E4C7B 100%);
 
     .login #pass-strength-result { margin:0 auto; display:block; float:none; width:100%; box-sizing:border-box; }
 
-    .login .message { position: relative; z-index:100; }
+    .login .message { position: relative; z-index:100; font-size:16px; max-width:400px; margin:0 auto; }
 
     .indicator-hint { text-align:center; color:rgba(255, 255, 255, 0.6); margin-top:20px; }

@@ -7,7 +7,7 @@ get_header(); the_post();
 			<div class="wrap">
 				<h6><?php the_field('we_are_text'); ?></h6>
 				<div class="more">
-					<a href="<?php the_field('read_more_link'); ?>">Read More</a>
+					<a href="<?php the_field('read_more_link'); ?>"><?php the_field('read_more_text'); ?></a>
 				</div>
 			</div>
 		</div>
