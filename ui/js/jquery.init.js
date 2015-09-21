@@ -52,6 +52,27 @@ $('.nav-toggle').click(function(){
         })
     }
 
+    $(document).on('click', '#loader a', function(e)  {
+        e.preventDefault();
+       // $('.text_holder').append("<div class=\"loader\">&nbsp;</div>");
+        var link = jQuery(this).attr('href');
+
+        var $content = '.wrap.employees';
+        $($content).animate({
+            opacity: 0.3
+        },150);
+        $.get(link+'', function(data){
+            var $elements = $('<div>').append(data);
+            var $new_content = $elements.find($content).wrapInner('').html(); // Grab just the content
+            $($content).html($new_content); // Append the new content
+
+        }).done(function(data){
+            $($content).animate({
+                opacity: 1
+            },50);
+        });
+    });
+
     /* Ajax load more Pagination */
     $(document).on('click', '.em-calendar .month_name a', function(e)  {
         e.preventDefault();

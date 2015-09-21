@@ -12,10 +12,13 @@
 
 
         <div id="main">
-            <div class="wrap">
-                <?php query_posts(array(
+            <div class="wrap employees">
+                <?php
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                query_posts(array(
                     'post_type' => 'profile',
-                    'posts_per_page' => '-1'
+                    'posts_per_page' => '10',
+                    'paged' => $paged
                 )); if(have_posts()){ ?>
                     <table id="projtable" class="sortable" cellspacing="0" width="100%">
                         <thead>
@@ -59,6 +62,9 @@
                             <?php } ?>
                         </tbody>
                     </table>
+                    <div id="loader">
+                        <?php previous_posts_link(); echo '<span> | </span>'; next_posts_link(); ?>
+                    </div>
                 <?php } wp_reset_query(); ?>
             </div>
         </div>

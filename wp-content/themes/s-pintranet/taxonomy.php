@@ -33,7 +33,7 @@ get_header(); the_post(); ?>
 
     <?php query_posts($args); if(have_posts()){ ?>
         <div id="main">
-            <div id="wrap">
+            <div class="wrap">
 
 	            <div id="comcontent">
 

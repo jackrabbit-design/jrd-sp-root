@@ -50,7 +50,7 @@ get_header(); the_post(); ?>
                 <?php $feat = wp_get_attachment_image_src(get_post_thumbnail_id(), ($parent == 13 ? 'team' : 'feat')); $feat = $feat[0]; ?>
                 <img src="<?= $feat ?>" class="img-responsive" alt="<? the_title() ?>">
             <?php } ?>
-            <a href="<?= get_permalink($parent) ?>"><?= get_the_title($parent); ?></a>
+            <!-- <a href="<?= get_permalink($parent) ?>"><?= get_the_title($parent); ?></a>-->
 
             <p><?php the_field('subtitle_text') ?></p>
 

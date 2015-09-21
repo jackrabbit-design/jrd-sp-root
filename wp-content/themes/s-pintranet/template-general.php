@@ -14,7 +14,9 @@ get_header(); the_post(); ?>
 	<div id="main">
 		<div id="maincontent">
 
-			<?php the_content(); ?>
+			<div class="wrap">
+				<?php the_content(); ?>
+			</div>
 
 			<?php if(have_rows('content')){
 				while(have_rows('content')){ the_row();
@@ -126,6 +128,27 @@ get_header(); the_post(); ?>
 						    	</div>
 			           		</div>
 			           	</div>
+					<?php }elseif(get_row_layout() == 'featured_news'){ ?>
+						<?php $post = get_sub_field('news'); setup_postdata($post) ?>
+						<div class="homespacer"></div>
+			        	<div class="wrap">
+				            <div id="featured">
+
+								<?php if(has_post_thumbnail()){ ?>
+									<?php $featImg = wp_get_attachment_image_src(get_post_thumbnail_id(), 'feat'); $featImg = $featImg[0]; ?>
+									<div class="featureright">
+										<img src="<?= $featImg ?>" class="img-responsive" alt="<? the_title() ?>">
+									</div>
+								<?php } ?>
+
+				                <div class="featureleft">
+					                <h3>Featured</h3>
+					                <h2><?php echo get_the_title() ?></h2>
+					                <p><?php echo get_the_excerpt() ?></p>
+					                <a href="<?php echo get_permalink() ?>" class="learnmore">Learn More</a>
+				                </div>
+				            </div>
+			       		 </div>
 					<?php } ?>
 				<?php } ?>
 			<?php } ?>
