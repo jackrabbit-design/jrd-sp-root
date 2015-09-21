@@ -63,7 +63,7 @@ get_header(); the_post(); ?>
 			                <table id="doctable" class="sortable" cellspacing="0" width="100%">
 			                    <thead>
 			                        <tr>
-			                            <th class="docth10">Date</th>
+			                            <th class="docth15">Date</th>
 			                            <th class="docth70">Document Title</th>
 			                            <th class="docth10">Type</th>
 			                            <th class="docth10">Download</th>
@@ -72,7 +72,7 @@ get_header(); the_post(); ?>
 			                    <tbody>
 									<?php while(have_rows('docs')){ the_row(); ?>
 				                        <tr>
-				                            <td class="table10"><?php the_sub_field('date'); ?></td>
+				                            <td class="table15"><?php the_sub_field('date'); ?></td>
 				                            <td class="table70"><?php the_sub_field('doc-title'); ?></td>
 				                            <td class="table10"><?php the_sub_field('doc-type'); ?></td>
 				                            <td class="table10"><a target="_blank" href="<?php $dl = get_sub_field('download'); echo $dl['url'] ?>" download class="exmore">Download</a></td>

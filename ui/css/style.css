@@ -482,6 +482,13 @@ input[type=submit]:hover, button:hover {  }
 /* general styles */
 
 	#maincontent { max-width:1150px; margin:auto; padding:30px 0px;  overflow: hidden; }
+	#maincontent p { padding:5px 0 15px; }
+
+	#maincontent h2 { margin-bottom:20px; }
+	#maincontent h3 { margin-bottom:15px; }
+	#maincontent ul { padding: 10px 0px 20px 15px; }
+	#maincontent ul li { list-style: outside none none; padding-left: 15px; background: transparent url("../images/dot.gif") no-repeat scroll 0 2px; padding-top: 0px; color: #7B7B7B; font-size: 15px; font-family: "ProximaNova"; line-height: 21px; padding-bottom: 10px; }
+
 	#content {background: #fff; padding: 0; height: 220px; position: relative; z-index: 2; border-radius: 0 5px 5px 5px; }
 	.leftcol{ display: inline-block; width: 33.3%; padding:20px 20px 20px 0; vertical-align: top;}
 	.rightcol{ display:inline-block; width: 33.3%; padding:20px 0 20px 20px; vertical-align: top;}
@@ -500,8 +507,10 @@ input[type=submit]:hover, button:hover {  }
 	.featureright img {max-width:100%;}
 	#doctable {border:1px solid #F7F7F7; margin:auto; font-size:16px; margin-top:20px;}
 	.docth10 { width:15%; background: #0A5385; text-align: left;  color:#fff; font-weight:500; vertical-align: middle;padding-left:3%; padding-top:15px; padding-bottom:15px; height:60px; white-space: nowrap;}
+	.docth15 { width:20%; background: #0A5385; text-align: left;  color:#fff; font-weight:500; vertical-align: middle;padding-left:3%; padding-top:15px; padding-bottom:15px; height:60px; white-space: nowrap;}
 	.docth70 { width:55%; background: #0A5385; text-align: left;  color:#fff; font-weight:500; vertical-align: middle;padding-left:3%; padding-top:15px; padding-bottom:15px; }
 	.table10 {width:15%;  text-align: left; vertical-align: middle;padding-left:3%; padding-top:15px; padding-bottom:15px; color:#7B7B7B;}
+	.table15 {width:20%;  text-align: left; vertical-align: middle;padding-left:3%; padding-top:15px; padding-bottom:15px; color:#7B7B7B;}
 	.table70 {width:55%;  text-align: left; vertical-align: middle; padding-left:3%; font-weight: 300; padding-top:15px;padding-bottom:15px; color:#7B7B7B;}
 	.tabarticledisplay {float:left; width:65%; padding:35px 20px;}
 	.tabarticledisplay h2 { padding:10px 0 10px 0;}
