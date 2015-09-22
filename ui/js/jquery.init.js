@@ -71,6 +71,7 @@ $('.nav-toggle').click(function(){
                 opacity: 1
             },50);
         });
+        return false;
     });
 
     /* Ajax load more Pagination */

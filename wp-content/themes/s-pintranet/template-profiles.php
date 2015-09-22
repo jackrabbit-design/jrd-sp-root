@@ -18,7 +18,9 @@
                 query_posts(array(
                     'post_type' => 'profile',
                     'posts_per_page' => '10',
-                    'paged' => $paged
+                    'paged' => $paged,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC'
                 )); if(have_posts()){ ?>
                     <table id="projtable" class="sortable" cellspacing="0" width="100%">
                         <thead>
@@ -63,7 +65,7 @@
                         </tbody>
                     </table>
                     <div id="loader">
-                        <?php previous_posts_link(); echo '<span> | </span>'; next_posts_link(); ?>
+                        <?php previous_posts_link('&lsaquo; Previous'); echo '<span> | </span>'; next_posts_link('Next &rsaquo;'); ?>
                     </div>
                 <?php } wp_reset_query(); ?>
             </div>
