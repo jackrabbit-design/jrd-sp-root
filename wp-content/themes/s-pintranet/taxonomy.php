@@ -11,10 +11,19 @@ get_header(); the_post(); ?>
         <?php get_template_part('secondary-menu'); ?>
 
 
-
+        <div id="maincontent">
+            <div class="wrap">
+                <?php
+                $desc = get_term_by('slug', get_query_var('news-types'), 'news-types');
+                echo get_field('category_description','news-types_'.$desc->term_id);
+                ?>
+            </div>
+        </div>
 
 
     <?php
+
+
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $args = array(
         'post_type' => 'news',

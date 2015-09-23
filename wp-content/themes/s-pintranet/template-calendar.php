@@ -79,7 +79,9 @@
                                         <span class="_date_format">DD/MM/YYYY</span>
                                     </a>
                                 </li>
-        						<li><a href="#" class="exmore">Contact</a></li>
+                                <?php if(get_field('contact_link')){ ?>
+            						<li><a href="<?php the_field('contact_link') ?>" class="exmore">Contact</a></li>
+                                <?php } ?>
         					</ul>
         				</div>
                     <?php } wp_reset_postdata(); ?>
