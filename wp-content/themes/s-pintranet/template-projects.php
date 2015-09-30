@@ -43,7 +43,7 @@
                                 if(isset($_GET['pm']) && $_GET['pm'] != $pm) continue;
                                 ?>
                                 <tr>
-                                    <td class="capitalize table20">
+                                    <td class="bold table20">
                                         <?php if($url = get_sub_field('client_url')){ ?>
                                             <a href="<?php echo $url ?>" class="exmore"><?php the_sub_field('client_name'); ?></a>
                                         <?php }else{ ?>
@@ -55,7 +55,7 @@
                                     <td class="table20">
                                         <?php if($pm){ ?>
                                             <p><a href="<?php echo get_permalink($pm) ?>" class="exmore"><?php echo get_the_title($pm) ?></a></p>
-                                            <p><a href="?pm=<?php echo $pm ?>" class="exmore">View Projects</a></p>
+                                            <p><a href="?pm=<?php echo $pm ?>" class="bold exmore">View Projects</a></p>
                                         <?php } ?>
                                     </td>
                                 </tr>

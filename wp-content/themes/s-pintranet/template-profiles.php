@@ -64,8 +64,8 @@
                             <?php } ?>
                         </tbody>
                     </table>
-                    <div id="loader">
-                        <?php previous_posts_link('&lsaquo; Previous'); echo '<span> | </span>'; next_posts_link('Next &rsaquo;'); ?>
+                    <div id="loader" class="clearfix">
+                        <div class="replybtn" style="float:left;"><?php previous_posts_link('&lsaquo; Previous'); echo '</div> <div class="replybtn" style="float:right;">'; next_posts_link('Next &rsaquo;'); ?>
                     </div>
                 <?php } wp_reset_query(); ?>
             </div>

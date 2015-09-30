@@ -74,7 +74,7 @@ get_header(); the_post(); ?>
 			                    <tbody>
 									<?php while(have_rows('docs')){ the_row(); ?>
 				                        <tr>
-				                            <td class="table15"><?php the_sub_field('date'); ?></td>
+				                            <td class="table15 bold"><?php the_sub_field('date'); ?></td>
 				                            <td class="table70"><?php the_sub_field('doc-title'); ?></td>
 				                            <td class="table10"><?php the_sub_field('doc-type'); ?></td>
 				                            <td class="table10"><a target="_blank" href="<?php $dl = get_sub_field('download'); echo $dl['url'] ?>" download class="exmore">Download</a></td>

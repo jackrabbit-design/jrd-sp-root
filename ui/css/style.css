@@ -231,7 +231,7 @@ h6 { font-size: 20px; color: #FFFFFF; letter-spacing: 0.85px; line-height: 24px;
 .content-main ol li:before { content:counter(li) '. '; counter-increment: li; position: absolute; left: 0; }
 
 .wrapper { width: 100%; box-sizing: border-box; margin: 0 auto; max-width: 100%; padding: 0 0px; }
-
+.bold {font-weight:600;}
 
 /* != PLACEHOLDER ATTRIBUTE STYLES = input or textarea - placeholder="whatever" ===== */
 /*
@@ -249,7 +249,7 @@ input[type=email] {   }
 input[type=submit], button{ display: inline-block; cursor: pointer; }
 input[type=submit]:hover, button:hover {  }
 
-.faqwrap { max-width:1180px; margin:auto; padding:0 20px;}
+.faqwrap { max-width: 1180px; /*font-size:0;*/ padding:0 20px; position:relative;}
 .wrap { max-width:1180px; margin:auto; /*font-size:0;*/ padding:0 20px; position:relative;}
 .navwrap { max-width:1180px; margin:auto; font-size:0; }
 .footerwrap { max-width:1180px; margin:auto; font-size:0; padding:40px 20px 100px;}
@@ -287,7 +287,7 @@ input[type=submit]:hover, button:hover {  }
 
 	#nav li:hover { position: relative; z-index: 599; cursor: default; }
 	#nav > li:hover > a { color:#76B84A; }
-	#nav ul { z-index:100; display:none; position: absolute; top:100%; width: 196px; background-color: #084671; padding:0; border-radius:5px; border-bottom:2px solid #05314F; left: 1.5%;}
+	#nav ul { z-index:100; display:none; position: absolute; top:100%; width: 196px; background-color: #084671; padding:0; border-radius:5px; border-bottom:2px solid #05314F; left: -15%;}
 	#nav ul:before { padding-top:20px;/*box-shadow: 0 3px 3px rgba(0,0,0,.15); position: absolute; top: -5px; left: 0; width: 100%; content: ''; z-index: 5; height: 5px;*/ }
 	#nav ul li {float: none; border-bottom:1px solid #285E83; }
 	#nav ul li:last-child {border:none;}
@@ -364,7 +364,7 @@ input[type=submit]:hover, button:hover {  }
 	#secondarymenu ul { max-width:1180px; text-align:center; height:60px; font-size:0;}
 	#secondarymenu a { color:#fff; line-height: 1.6; }
 	#secondarymenu li:before { color:#fff; position: absolute; right:73%; }
-	#secondarymenu li { display:inline-block; position: relative;  border-right: 1px #fff solid; font-size: 20px; font-weight: 300; height:60px; padding: 12px 1.8% 0 7.4% }
+	#secondarymenu li { display:inline-block; position: relative;  border-right: 1px #fff solid; font-size: 20px; font-weight: 300; height:60px; padding: 12px 1.8% 0 6.4%; width:25%; }
 	#secondarymenu li:hover { display:inline-block; background-color:#6AA542; color:#fff; }
 	#secondarymenu li:last-child { border-right:0px; }
 	#secondarymenu li:hover a {color:#fff;}
@@ -405,7 +405,7 @@ input[type=submit]:hover, button:hover {  }
 	/*.accordion dl:after, .accordion-list:after { content: ""; display: block; height: 1em; width: 100%; }*/
 	.accordion dd, .accordion__panel { font-size: 1em; line-height: 1.5em; max-width: 1020px; margin: auto;}
 	.accordion p { font-size:14px; padding: 0em 2em 20px 12px; }
-	.accordion { position: relative; margin:auto; max-width:1100px; margin-top:50px; }
+	.accordion { position: relative; margin:auto; width:65%; margin-top:50px; }
 	.maincontent { max-width: 960px; margin: 0 auto; padding: 2em 0 2em 0;}
 	.accordionTitle, .accordion__Heading { font-family: "Crimson"; font-size: 24px; color: #0A5385; line-height: 30px; padding: 20px 20px 20px 50px; display: block; text-decoration: none; transition: background-color 0.5s ease-in-out; border-top: 1px solid #D8D8D8; }
 	.accordionTitle:before, .accordion__Heading:before { content: url('../images/dropdown.png'); position:absolute; left:0; font-size: 1.5em; line-height: 0.5em; float: left; transition: transform 0.3s ease-in-out; }
@@ -444,6 +444,7 @@ input[type=submit]:hover, button:hover {  }
 	.preview h2 {padding-top:8px;}
 	.preview p {padding-top:10px;}
 	.exmore { font-size: 14px; color: #76B84A; letter-spacing: 0.6px; line-height: 28px; text-transform: uppercase;}
+	.exmore:hover {color:#0A5385; }
 	.exmore + small { font-size:13px; }
 
 	.exmore button {background:none; color:inherit; }
@@ -474,7 +475,7 @@ input[type=submit]:hover, button:hover {  }
 	.projth50 { font-size:16px; width:46%; background: #0A5385; text-align: left;  color:#fff; font-weight:500; vertical-align: middle;padding-left:3%; padding-top:5px; padding-bottom:5px; }
 	.table20 {width:18%;  text-align: left; vertical-align: middle;padding-left:3%; padding-top:10px; padding-bottom:10px; color:#7B7B7B; vertical-align: top;}
 	.table50 {width:46%;  text-align: left; vertical-align: middle; padding-left:3%; font-weight: 300; padding-top:10px;padding-bottom:10px; color:#484848; vertical-align: top;}
-	.projname { font-size: 16px; color: #555555; letter-spacing: 0.63px; line-height: 20px; font-weight:500; color:#7B7B7B;}
+	.projname { font-size: 16px; color: #555555; letter-spacing: 0.63px; line-height: 20px; color:#7B7B7B;}
 	.projmanager { font-size: 16px; color: #7B7B7B; letter-spacing: 0.63px; line-height: 20px; color:#7B7B7B;}
 	tr:nth-child(even) { background-color:#F7F7F7;}
 
@@ -484,8 +485,8 @@ input[type=submit]:hover, button:hover {  }
 
 /* general styles */
 
-	#maincontent { max-width:1150px; margin:auto; padding:30px 0px;  overflow: hidden; }
-	#maincontent p { padding:5px 0 15px; }
+	#maincontent { max-width:1150px; margin:auto; padding:30px 20px;  overflow: hidden; }
+	#maincontent p { width:65%; padding:5px 0 15px; }
 
 	#maincontent h2 { margin-bottom:20px; }
 	#maincontent h3 { margin-bottom:15px; }
@@ -519,6 +520,7 @@ input[type=submit]:hover, button:hover {  }
 	.tabarticledisplay {float:left; width:65%; padding:35px 20px;}
 	.tabarticledisplay h2 { padding:10px 0 10px 0;}
 	.tabarticledisplay p { padding-top:25px; font-size: 15px; color: #7B7B7B; letter-spacing: 0.6px; line-height: 24px;}
+	#maincontent .tabarticledisplay p {width:100%;}
 	.tabarticleback {line-height: 80px;}
 	.tabsidebar {float:right; width:35%; padding:0; margin-top:25px;}
 	.tabsidebar p { font-size: 14px; color: #0A5385; letter-spacing: 0.56px; line-height: 20px; padding-top:10px;}
@@ -675,11 +677,12 @@ input[type=submit]:hover, button:hover {  }
 	#footmenu li a:hover {background: #76B84A; }
 	#companyinfo { width:100%; margin:0 auto;}
 	.footspacer { padding-top:37px; border-bottom:1px solid #EAEAEA;}
-	.address { float:left; font-size: 12px; color: #999999; line-height: 15px; padding-top: 10px;}
-	.copyright { float:right; text-align: right; font-size: 12px; color: #999999; line-height: 15px; padding-top: 10px;}
+	.address { float:left; font-size: 12px; color: #999999; line-height: 15px; padding-top: 10px; width: 50%; text-align: left;}
+	.copyright { float:right; width: 50%; text-align: right; font-size: 12px; color: #999999; line-height: 15px; padding-top: 10px;}
 	.copyright a { color: #999999; }
 	.capitalize { text-transform: uppercase;}
 	.jackrabbit a:hover {color:#76B84A;}
+	.foot1 {padding-right:5px;}
 	.foot1:after {content:""; white-space: pre;}
 	.foot2:after {content:""; white-space: pre;}
 
@@ -835,6 +838,7 @@ input[type=submit]:hover, button:hover {  }
 /*  Message Board Post Styles */
 
 	.intro {padding:50px 0 25px; border-bottom:4px solid #D8D8D8;}
+	.intro .exmore:hover {color:#0A5385;}
 	.intro h2 {padding:20px 25% 20px 0;}
 	.intro p {font-size: 15px; color: #7B7B7B; letter-spacing: 0.6px; line-height: 24px; padding:0 20% 20px 0;}
 
@@ -845,6 +849,7 @@ input[type=submit]:hover, button:hover {  }
 	.poster {float:left; width:70%;}
 	.postreply {float:right; margin-top:22px;}
 	.replybtn {background-color:#76B84A; border-radius:45px; padding:10px 35px; color:#fff; font-size: 16px; letter-spacing: 0.69px; }
+	.replybtn a {color:#ffffff}
 	.replybtn:hover { background-color:#0A5385; }
 	.replies { width:85%; margin:auto; padding:38px 0; }
 	.replies .poster {padding-top:22px;}
@@ -947,7 +952,7 @@ input[type=submit]:hover, button:hover {  }
 		.employeetext {float:none; margin:auto; clear:both; padding-left:0;}
 		#secondarymenu { min-height:100px; }
 		#secondarymenu ul { min-height:100px;}
-		#secondarymenu li { width:20%; min-height:100px; position: relative; padding:0; margin:auto;}
+		#secondarymenu li {  min-height:100px; position: relative; padding:0; margin:auto;}
 		#secondarymenu li:hover {height:100px;}
 		#secondarymenu li:last-child { border-right:0px; }
 		#secondarymenu li:before { position: absolute; display: block; margin: 10px auto; right:42%;}
@@ -957,7 +962,7 @@ input[type=submit]:hover, button:hover {  }
 
 	@media screen and (max-width:870px) {
 		#nav2 li a { padding: 0 8px 0px 8px; }
-		#secondarymenu a { font-size: 14px; margin:53px 31px 0 31px;}
+		#secondarymenu a { font-size: 14px; margin:53px 20px 0 20px;}
 		#secondarymenu li:before { margin: 17px auto; right:41%;}
 		.calleft {width:40%;}
 		.colfloatleft { float:left; width:60%; padding-right:20px; }
@@ -1001,7 +1006,7 @@ input[type=submit]:hover, button:hover {  }
 		.employeecenter { width:100%;}
 		.employeelayout p { font-size:16px; line-height:20px;}
 		#secondarymenu li:before { margin: 17px auto; right:40%;}
-		#secondarymenu a { font-size: 14px; margin:53px 21px 0 21px;}
+		#secondarymenu a { font-size: 14px; margin:53px 35px 0 35px;}
 		#secondarymenu li:hover {max-height:100px;}
 		.docth10 {width:20%;}
 	  	.tabs-select ul li { float: left; padding: 0;}
@@ -1023,7 +1028,7 @@ input[type=submit]:hover, button:hover {  }
 	}
 
 	@media screen and (max-width:650px) {
-		.nav-toggle.mobile { display: block; float: right; color: #FFF; display: inline-block; padding: 12px 0 8px 10px; font-size: 25px; cursor: pointer;     position: absolute; right: 25px; top: 53px;}
+		.nav-toggle.mobile { display: block; float: right; color: #FFF; display: inline-block; padding: 12px 0 8px 10px; font-size: 25px; cursor: pointer;     position: absolute; right: 5px; top: 0px;}
 		.nav-toggle.mobile:hover { color: #fff; text-decoration: none; }
 		.nav-toggle.mobile.fixed { position: fixed; color: #000; opacity: .4; z-index: 999; right: 0; top: 0; padding: 12px 0 8px 10px; right: 20px; }
 		#nav-container { z-index:1000; display: block; box-sizing: border-box; background: #084671; position: relative;   height:0; /*height: 100%;*/ width: 100%; overflow: hidden; -webkit-transition-duration: .2s; -moz-transition-duration: .2s; transition-duration: .2s; }
@@ -1046,13 +1051,19 @@ input[type=submit]:hover, button:hover {  }
 
 		#nav>li.current-menu-ancestor:after,
 			#nav>li.current-menu-item:after { display:none; }
-
+		.headsearch {display:none;}
 		#headmenu {visibility: inherit;}
 		#headmenu li a:after {content:url(../images/mobilearrow.png);  position: absolute; right: 42px;}
 		#headmenu li:first-child a:after {transform: rotate(90deg);}
 		#headmenu li ul li a:after {content:" ";}
 		#headmenu2 {display: none;}
 		#messagetable {font-size:12px;}
+		.messageth60 {width:40%;}
+		.intro p {padding-bottom:10px;}
+		.poster {float:none; width:100%;}
+		.postreply {float:none; width:100%; margin:0;}
+		.replybtn {padding:7px 25px; font-size:14px;}
+		.replies .poster {padding:0;}
 	}
 
 	@media screen and (max-width:600px) {
@@ -1073,6 +1084,8 @@ input[type=submit]:hover, button:hover {  }
 		#projtable  tr td a { display: block; width: 100%; }
 		.table50 {padding:10px 0;}
 		.table20 {padding:2px 0 0 0;}
+		.prev  {float:left; width:50%;}
+		.next {float: right; width:50%;}
 		.employeeimg { margin:4% 0 0 12%;}
 		#secondarymenu li { border:none;}
 		#secondarymenu li:before { right:36%;}
@@ -1083,6 +1096,8 @@ input[type=submit]:hover, button:hover {  }
 		tr:nth-child(odd) {background: none;}
 		.articledisplay { float:none; width:100%; margin:auto; padding:40px 0 0 0;}
 		.sidebar { float:none; width:100%; margin:auto; padding:20px 0 40px 0;}
+		.msgsearch {float:none;}
+		.newpost { float:none; display: block; width: 200px; margin-top: 20px;}
 	}
 
 
@@ -1096,6 +1111,7 @@ input[type=submit]:hover, button:hover {  }
 		#usermenu { width:60%; }
 		.logomargins { width:40%; }
 		#usermenu li#headsearch { display:block; }
+		.messageth60 {width:30%;}
 	}
 
 	@media screen and (max-width:420px) {
