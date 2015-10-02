@@ -849,6 +849,7 @@ input[type=submit]:hover, button:hover {  }
 	.poster {float:left; width:70%;}
 	.postreply {float:right; margin-top:22px;}
 	.replybtn {background-color:#76B84A; border-radius:45px; padding:10px 35px; color:#fff; font-size: 16px; letter-spacing: 0.69px; }
+	#loader	.replybtnprev a {background-color:#76B84A; border-radius:45px; padding:10px 35px; color:#fff; font-size: 16px; letter-spacing: 0.69px; }
 	.replybtn a {color:#ffffff}
 	.replybtn:hover { background-color:#0A5385; }
 	.replies { width:85%; margin:auto; padding:38px 0; }
