@@ -673,7 +673,7 @@ input[type=submit]:hover, button:hover {  }
 	#footer { max-width:1440px; margin:auto; text-align: center;}
 	#footer ul { }
 	#footmenu li { display:inline-block;  padding:0 1% 0 1%; margin:auto;}
-	#footmenu li a { background: #0A5385; border-radius: 40px; padding:10px 35px 10px 35px; font-size: 16px; color: #FFFFFF; letter-spacing: 0.66px; line-height: 20px; }
+	#footmenu li a { display:inline-block; background: #0A5385; border-radius: 40px; padding:10px 35px 10px 35px; font-size: 16px; color: #FFFFFF; letter-spacing: 0.66px; line-height: 20px; }
 	#footmenu li a:hover {background: #76B84A; }
 	#companyinfo { width:100%; margin:0 auto;}
 	.footspacer { padding-top:37px; border-bottom:1px solid #EAEAEA;}
@@ -1033,7 +1033,7 @@ input[type=submit]:hover, button:hover {  }
 		.nav-toggle.mobile:hover { color: #fff; text-decoration: none; }
 		.nav-toggle.mobile.fixed { position: fixed; color: #000; opacity: .4; z-index: 999; right: 0; top: 0; padding: 12px 0 8px 10px; right: 20px; }
 		#nav-container { z-index:1000; display: block; box-sizing: border-box; background: #084671; position: relative;   height:0; /*height: 100%;*/ width: 100%; overflow: hidden; -webkit-transition-duration: .2s; -moz-transition-duration: .2s; transition-duration: .2s; }
-		#nav-container.show { width: 100%; height: calc(380px); overflow: hidden; }
+		#nav-container.show { width: 100%; height: calc(755px); overflow: hidden; }
 		#nav { float: none; }
 		#nav li { display: block; float: none; width: 100%; margin:0; }
 		#nav li a { display: block; border-bottom: 1px solid #2C6186; line-height: 140%; padding: 10px 0 10px 26px; }
