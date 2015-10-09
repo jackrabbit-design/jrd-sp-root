@@ -13,7 +13,7 @@
                         <a href="<?php echo $resume['url'] ?>" download>View R&eacute;sum&eacute;</a>
                     <?php } ?>
                     <?php if($user == $me['ID']){
-                        echo '<a href="'.the_permalink().'?edit">Edit Profile</a>';
+                        echo '<a href="'.get_permalink().'?edit">Edit Profile</a>';
                     }
                     ?>
                 </div>

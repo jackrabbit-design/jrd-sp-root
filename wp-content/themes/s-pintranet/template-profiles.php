@@ -17,9 +17,9 @@
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 query_posts(array(
                     'post_type' => 'profile',
-                    'posts_per_page' => '10',
+                    'posts_per_page' => '20',
                     'paged' => $paged,
-                    'orderby' => 'menu_order',
+                    'orderby' => 'name',
                     'order' => 'ASC'
                 )); if(have_posts()){ ?>
                     <table id="projtable" class="sortable" cellspacing="0" width="100%">

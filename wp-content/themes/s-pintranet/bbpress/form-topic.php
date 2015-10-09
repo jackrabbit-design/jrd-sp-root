@@ -29,10 +29,11 @@
 				<legend>
 
 					<?php
-						if ( bbp_is_topic_edit() )
+						/*if ( bbp_is_topic_edit() )
 							printf( __( 'Now Editing &ldquo;%s&rdquo;', 'bbpress' ), bbp_get_topic_title() );
 						else
 							bbp_is_single_forum() ? printf( __( 'Create New Topic in &ldquo;%s&rdquo;', 'bbpress' ), bbp_get_forum_title() ) : _e( 'Create New Topic', 'bbpress' );
+                            */
 					?>
 
 				</legend>
@@ -53,7 +54,7 @@
 
 					<?php do_action( 'bbp_theme_before_topic_form_content' ); ?>
 
-					<?php bbp_the_content( array( 'context' => 'topic', 'quicktags' => false ) ); ?>
+					<?php bbp_the_content( array( 'context' => 'topic', 'quicktags' => false, 'media_buttons' => true ) ); ?>
 
 					<?php do_action( 'bbp_theme_after_topic_form_content' ); ?>
 

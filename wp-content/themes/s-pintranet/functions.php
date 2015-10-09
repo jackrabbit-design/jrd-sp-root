@@ -139,11 +139,25 @@ function jrd_login_title(){
 add_action( 'login_headertitle', 'jrd_login_title' );
 
 function jrd_login() { ?>
-	<div class="footerwrap clearfix"
-		data-img1="<?php $img = get_field('login_image_1','options'); echo $img['sizes']['login-1']; ?>"
-		data-img2="<?php $img = get_field('login_image_2','options'); echo $img['sizes']['login-2']; ?>"
-		data-img3="<?php $img = get_field('login_image_3','options'); echo $img['sizes']['login-3']; ?>"
-		data-img4="<?php $img = get_field('login_image_4','options'); echo $img['sizes']['login-4']; ?>"
+    <div class="footerwrap clearfix"
+    <?php
+    query_posts(array(
+        'post_type' => 'profile',
+        'posts_per_page' => '-1',
+        'orderby' => 'rand'
+    )); if(have_posts()){
+        $i = 1;
+        while(have_posts()){
+            if($i > 4) break;
+            the_post();
+            if($photo = get_field('photo')){
+                $photo = $photo['sizes']['login-'.$i];
+                echo "data-img{$i}='{$photo}' ";
+                $i++;
+            }
+        }
+    } wp_reset_query();
+    ?>
 		>
         <div id="footer">
 	        <div id="companyinfo">

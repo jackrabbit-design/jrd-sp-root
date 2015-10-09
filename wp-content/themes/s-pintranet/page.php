@@ -2,7 +2,11 @@
 
         <div id="pagetitle">
             <div class="wrap">
-                <h1><? the_title() ?></h1>
+                <?php
+                $title = get_the_title();
+                if($post->post_type == 'topic') $title = 'Employee Exchange';
+                ?>
+                <h1><? echo $title ?></h1>
             </div>
         </div>
 

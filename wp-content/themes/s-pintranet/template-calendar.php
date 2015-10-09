@@ -93,7 +93,7 @@
                     $nextPg = '?pg=2';
                 }  ?>
 
-				<a href="<?php echo $nextPg ?>" class="loadmore exmore">Load more events</a>
+				<a href="<?php echo $nextPg ?>" class="loadmore exmore calmore">Load more events</a>
             </div>
 		</div>
 	</div>
