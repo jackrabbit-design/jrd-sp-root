@@ -411,7 +411,7 @@ input[type=submit]:hover, button:hover {  }
 	.accordionTitle:before, .accordion__Heading:before { content: url('../images/dropdown.png'); position:absolute; left:0; font-size: 1.5em; line-height: 0.5em; float: left; transition: transform 0.3s ease-in-out; }
 	.accordionTitle:hover:before, .accordion__Heading:hover:before {  content: url('../images/dropdownhov.png'); }
 	.accordionTitleActive, .accordionTitle.is-expanded {  }
-	.accordionTitleActive:before, .accordionTitle.is-expanded:before { transform: rotate(45deg); }
+	.accordionTitleActive:before, .accordionTitle.is-expanded:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); transform: rotate(45deg); }
 	.accordionItem { height: auto; overflow: hidden; max-height: 50em; transition: max-height 1s; }
 	@media screen and (min-width: 48em) {
 		.accordionItem { transition: max-height 0.5s; }
@@ -839,6 +839,7 @@ input[type=submit]:hover, button:hover {  }
 	.bbp-form #bbp_topic_submit { background: #76B84A none repeat scroll 0% 0%; box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1); border-radius: 40px; font-size: 16px; color: #FFF; letter-spacing: 0.66px; line-height: 20px; padding: 6px 32px; border: medium none; box-sizing: content-box; }
 	.bbp-form #bbp_topic_submit:hover { background:#0A5385; }
 
+    .bbp-form legend { display:none; }
 /*  Message Board Post Styles */
 
 	.intro {padding:50px 0 25px; border-bottom:4px solid #D8D8D8;}

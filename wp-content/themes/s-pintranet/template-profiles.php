@@ -17,7 +17,7 @@
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 query_posts(array(
                     'post_type' => 'profile',
-                    'posts_per_page' => '20',
+                    'posts_per_page' => '-1',
                     'paged' => $paged,
                     'orderby' => 'name',
                     'order' => 'ASC'
