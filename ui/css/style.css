@@ -382,10 +382,10 @@ input[type=submit]:hover, button:hover {  }
 	.previewh { float:right; width:45%; margin: -1px 2.5% 0px 2.5%; vertical-align: top; padding-top:30px; }
 	.previewh:first-child {float:left;}
 	.previewh .featured {float:right;}
-	.previewh1:last-child {float:left; position: absolute; bottom: 0;}
+	.previewh1:last-child {float:left; /*position: absolute;*/ bottom: 0;}
 	.previewh1 { float:right; width:45%; margin: -1px 2.5% 0px 2.5%; vertical-align: top; padding-top:30px; }
 	.previewh1 {float:right;}
-	.previewh1 img { width:100%; transform-origin:bottom; height:auto; }
+	.previewh1 img { width:100%; transform-origin:bottom; height:auto; display:block; }
 	.previewh1 h2 {padding-top:5px; }
 	.previewh1 h4 {padding-top:16px;}
 	.previewh1 p {padding-top:22px; padding-bottom:20px;}
@@ -448,6 +448,7 @@ input[type=submit]:hover, button:hover {  }
 	.exmore + small { font-size:13px; }
 
 	.exmore button {background:none; color:inherit; }
+    button.exmore { background:none; }
 
 	.load-more { border-top:1px solid #ccc; padding-top:20px; }
 	.load-more a { font-size: 14px; color: #76B84A; letter-spacing: 0.6px; line-height: 28px; text-transform: uppercase; }

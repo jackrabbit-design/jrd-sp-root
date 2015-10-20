@@ -20,7 +20,7 @@
             <?php if($post->ID != 151){ ?>
                 <li class="clearsearch exmore"><img src="<?php bloginfo('url') ?>/ui/images/dropdown.png" width="18" />Clear search</li>
             <?php }else{ ?>
-                <li class=" exmore">Search</li>
+                <button type="submit" class=" exmore">Search</button>
             <?php } ?>
         </ul>
     </form>

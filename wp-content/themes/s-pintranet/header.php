@@ -23,11 +23,10 @@
     <link type="text/plain" rel="author" href="<? bloginfo('url') ?>/authors.txt" />
     <link type="image/x-icon" rel="shortcut icon" href="<? bloginfo('url') ?>/favicon.png" />
     <?php
-		if ( is_user_logged_in() ) {
-
-		} else {
+        $curUser = wp_get_current_user();
+		if ( $curUser->ID == 0 ){
 			wp_redirect( 'http://employees.spconinc.com/wp-login.php', 301 );
-		exit;
+    		exit;
 		}
 	wp_head();
     ?>

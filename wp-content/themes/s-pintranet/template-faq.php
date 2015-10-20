@@ -12,6 +12,14 @@
 
 
         <div id="main">
+
+            <div id="maincontent">
+                <div class="wrap">
+                    <?php the_content(); ?>
+                </div>
+            </div>
+
+
             <div class="faqwrap">
                 <div class="accordion">
                     <dl>

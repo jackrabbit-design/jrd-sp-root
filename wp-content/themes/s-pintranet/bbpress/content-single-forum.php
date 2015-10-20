@@ -11,7 +11,9 @@
 <div id="main">
 	<div class="wrap">
 
-		<p class="openp">Vestibulum tincidunt est a erat porttitor ultricies. Donec leo neque, mattis nec massa ut, posuere viverra mi. Nullam sed mi dapibus, ultrices sem ut, pellentesque lectus. In hac habitasse platea dictumst. Nullam ullamcorper euismod ligula. Sed scelerisque tristique enim at faucibus. </p>
+		<div class="openp">
+            <?php echo bbp_forum_content(); ?>
+        </div>
 	</div>
 
 	<?php do_action( 'bbp_template_before_single_forum' ); ?>

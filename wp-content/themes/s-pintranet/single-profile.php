@@ -91,9 +91,11 @@
         			<?php the_field('bio'); ?>
 
     			</div>
-    			<div class="sidebar empquote">
-    				<blockquote><?php the_field('quote'); ?>&rdquo;</blockquote>
-    			</div>
+                <?php if(get_field('quote')){ ?>
+        			<div class="sidebar empquote">
+        				<blockquote><?php the_field('quote'); ?>&rdquo;</blockquote>
+        			</div>
+                <?php } ?>
                 <a href="<?php echo get_permalink(11) ?>" class="exmore articleback">&lt; View All Employees</a>
         	</div>
         </div>

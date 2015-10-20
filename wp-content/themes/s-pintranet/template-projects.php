@@ -17,6 +17,10 @@
 
                 <?php if(have_rows('projects')){ ?>
 
+                    <?php if(isset($_GET['pm'])){
+                        echo '<a class="exmore" href="'.get_permalink().'">Clear Search</a>';
+                    } ?>
+
                     <table id="projtable" class="sortable" cellspacing="0" width="100%">
                         <thead>
                             <tr>
