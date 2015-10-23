@@ -249,10 +249,17 @@ input[type=email] {   }
 input[type=submit], button{ display: inline-block; cursor: pointer; }
 input[type=submit]:hover, button:hover {  }
 
-.faqwrap { max-width: 1180px; /*font-size:0;*/ padding:0 20px; position:relative;}
+.faqwrap { max-width: 1180px; /*font-size:0;*/ padding:0 20px; position:relative; margin:0 auto;}
 .wrap { max-width:1180px; margin:auto; /*font-size:0;*/ padding:0 20px; position:relative;}
 .navwrap { max-width:1180px; margin:auto; font-size:0; }
 .footerwrap { max-width:1180px; margin:auto; font-size:0; padding:40px 20px 100px;}
+
+
+#alert { background:#903D85; position:fixed; bottom:0; width:100%; padding:24px 0; }
+#alert .btn-close { float:right; width:32px; height:32px; background:url('../images/btn-close.png') no-repeat center center; margin-left:40px; }
+#alert p { font:500 18px/1.3 ProximaNova; color:#fff; }
+#alert p a { color:#f496e7; }
+#alert p a:hover { color:#ffc2f7; }
 
 /* Header styles */
 
@@ -364,7 +371,7 @@ input[type=submit]:hover, button:hover {  }
 	#secondarymenu ul { max-width:1180px; text-align:center; height:60px; font-size:0;}
 	#secondarymenu a { color:#fff; line-height: 1.6; }
 	#secondarymenu li:before { color:#fff; position: absolute; right:73%; }
-	#secondarymenu li { display:inline-block; position: relative;  border-right: 1px #fff solid; font-size: 20px; font-weight: 300; height:60px; padding: 12px 1.8% 0 6.4%; width:25%; }
+	#secondarymenu li { cursor:pointer; display:inline-block; position: relative;  border-right: 1px #fff solid; font-size: 20px; font-weight: 300; height:60px; padding: 12px 1.8% 0 6.4%; width:25%; }
 	#secondarymenu li:hover { display:inline-block; background-color:#6AA542; color:#fff; }
 	#secondarymenu li:last-child { border-right:0px; }
 	#secondarymenu li:hover a {color:#fff;}
@@ -403,9 +410,9 @@ input[type=submit]:hover, button:hover {  }
 
 	.accordion dl, .accordion-list { border-bottom: 1px solid #D8D8D8; }
 	/*.accordion dl:after, .accordion-list:after { content: ""; display: block; height: 1em; width: 100%; }*/
-	.accordion dd, .accordion__panel { font-size: 1em; line-height: 1.5em; max-width: 1020px; margin: auto;}
+	.accordion dd, .accordion__panel { font-size: 1em; line-height: 1.5em; padding-left:40px; margin: auto;}
 	.accordion p { font-size:14px; padding: 0em 2em 20px 12px; }
-	.accordion { position: relative; margin:auto; width:65%; margin-top:50px; }
+	.accordion { position: relative; margin:auto; /*width:65%;*/ margin-top:50px; }
 	.maincontent { max-width: 960px; margin: 0 auto; padding: 2em 0 2em 0;}
 	.accordionTitle, .accordion__Heading { font-family: "Crimson"; font-size: 24px; color: #0A5385; line-height: 30px; padding: 20px 20px 20px 50px; display: block; text-decoration: none; transition: background-color 0.5s ease-in-out; border-top: 1px solid #D8D8D8; }
 	.accordionTitle:before, .accordion__Heading:before { content: url('../images/dropdown.png'); position:absolute; left:0; font-size: 1.5em; line-height: 0.5em; float: left; transition: transform 0.3s ease-in-out; }
@@ -707,11 +714,11 @@ input[type=submit]:hover, button:hover {  }
 	.event p {padding:18px 0;}
 	.event li {display:inline-block; padding-right:30px;}
 
-	.event .addthisevent-drop { background:#fff url("http://addthisevent.com/gfx/icon-calendar-t1.png") no-repeat scroll 9px 50%; border:none; color: #76B84A !important; font-family:ProximaNova; font-weight:400;text-transform:uppercase; font-size:14px; }
+	.event .addthisevent-drop { background:#fff; border:none; color: #76B84A !important; font-family:ProximaNova; font-weight:400;text-transform:uppercase; font-size:14px; padding:9px 12px 8px 12px }
 	.event .addthisevent-drop:hover { border:none; color:#0A5385 !important; font-weight:400; }
 
 	.calmore {background-color:#76B84A; padding:7px 24px; color: #fff; font-size:16px; border-radius:20px;}
-	.calmore:hover {background-color:#0A5385;}
+	.calmore:hover {background-color:#0A5385; color:#fff;}
 	.company-event {font-size: 14px; color: #BF4D6A; line-height: 17px; font-weight: 500;}
 	.birthday {font-size: 14px; color: #76B84A; line-height: 17px; font-weight: 500;}
 	.anniversary {font-size: 14px; color: #398D6D; line-height: 17px; font-weight: 500;}
@@ -878,7 +885,8 @@ input[type=submit]:hover, button:hover {  }
 	.empquote blockquote:before { display: block; padding-left: 10px; content: "\201C"; font-size: 24px; position: absolute; left: 16px; }
 	.empquote + .articleback { clear:left; float:left; }
 	.gradbot {opacity: 0.2; transform: rotate(-180deg); background-image: linear-gradient(-180deg, #000000 0%, rgba(7,9,11,0.00) 100%); height: 6px; position: relative; top: 30px;}
-	.heading {font-weight:500; font-size: 16px; color: #0A5385; letter-spacing: 0.69px; line-height: 20px;}
+	.heading {font-weight:500; font-size: 16px; color: #0A5385; letter-spacing: 0.69px; line-height: 20px; clear:both;}
+    .heading:before { float:left; }
 	.profileimg {float:left; width:15%;}
 	.profileimg .circle { width:auto; max-width:100%; border:2px solid #BDBDBD; border-radius:100%; overflow:hidden; display:inline-block; }
 	.profileimg img {max-width:100%;  display:block; height:auto;}
@@ -1010,7 +1018,7 @@ input[type=submit]:hover, button:hover {  }
 		.previewh1:last-child {position:relative;}
 		.preview1 {width:100%;}
 		.preview1 h2 {padding-top:5px; }
-		#doctable {font-size:14px;}
+		#doctable {font-size:13px;}
 		#doctable a {font-size:12px;}
 		.employeecenter { width:100%;}
 		.employeelayout p { font-size:16px; line-height:20px;}
@@ -1033,7 +1041,14 @@ input[type=submit]:hover, button:hover {  }
 	    .midline:after {display:none;}
 		#nav2 li a { font-size:13px;}
 		#messagetable {font-size:14px;}
-		#messagetable p {font-size:12px;}
+		#messagetable p {font-size:13px; line-height:1.3;}
+        #messagetable p a { display:block; margin-bottom:5px; }
+
+        #messagetable th:nth-child(3),
+            #messagetable td:nth-child(3) { display:none; }
+        .msgsearch input { width:150px; }
+        .newpost {}
+        #alert p { font-size:15px; }
 	}
 
 	@media screen and (max-width:650px) {
@@ -1088,7 +1103,8 @@ input[type=submit]:hover, button:hover {  }
 		#projtable  {border:none; }
 		#projtable thead { display: none; border:none;}
 		#projtable  tr { display: inline-block; width: 100%; box-sizing: border-box;  padding: 15px; }
-		#projtable  tr td { display: block; width: 100% !important; border-bottom: none;}
+		#projtable  tr td { display: block; width: 100% !important; border-bottom: none; font-size:13px;}
+        #projtable  tr td .heading { font-size:13px; }
 		#projtable  tr td strong { display: block; width: 100%; }
 		#projtable  tr td a { display: block; width: 100%; }
 		.table50 {padding:10px 0;}

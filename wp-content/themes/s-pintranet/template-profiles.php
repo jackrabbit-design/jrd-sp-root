@@ -12,6 +12,13 @@
 
 
         <div id="main">
+
+            <div id="maincontent">
+                <div class="wrap">
+                    <?php the_content(); ?>
+                </div>
+            </div>
+
             <div class="wrap employees">
                 <?php
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;

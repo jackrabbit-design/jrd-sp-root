@@ -28,6 +28,15 @@
         </div>
     </div>
 
+    <?php if(!isset($_COOKIE['notify']) && $_COOKIE['notify'] != true && get_field('notification_text','options')){ ?>
+        <div id="alert">
+            <div class="wrap">
+                <div class="btn-close"></div>
+                <?php the_field('notification_text','options') ?>
+            </div>
+        </div>
+    <?php } ?>
+
     <?php wp_footer(); ?>
 </body>
 </html>

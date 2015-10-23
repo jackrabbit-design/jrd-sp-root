@@ -3,7 +3,8 @@ if(get_field('external_url')){
     wp_redirect(get_field('external_url'));
     exit;
 }
-get_header(); the_post(); ?>
+get_header(); the_post();
+?>
 
 <div id="pagetitle">
             <div class="wrap">

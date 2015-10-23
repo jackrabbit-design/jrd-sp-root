@@ -4,6 +4,14 @@
 
 jQuery(function($){
 
+    $('#alert .btn-close').on('click',function(){
+        $('#alert').slideUp(150);
+        $.cookie('notify', true, '/', 1);
+    });
+
+    $('#secondarymenu li').on('click',function(e){
+        window.location.href = $('a', this).attr('href');
+    })
 
 //MOBILE NAV TOGGLE
 
@@ -16,7 +24,7 @@ $('.nav-toggle').click(function(){
     $('a.newpost').on('click',function(){
         $('.bbp-topic-form').slideToggle(200);
         if($(this).text() == 'Start New Topic'){
-            $(this).text('Cancel New Topic');
+            $(this).text('Cancel');
         }else{
             $(this).text('Start New Topic');
         }
