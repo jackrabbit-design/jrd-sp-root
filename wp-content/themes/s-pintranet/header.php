@@ -21,7 +21,7 @@
     ?>
     <title><?php echo $title ?></title>
     <link type="text/plain" rel="author" href="<? bloginfo('url') ?>/authors.txt" />
-    <link type="image/x-icon" rel="shortcut icon" href="<? bloginfo('url') ?>/favicon.png" />
+    <link type="image/x-icon" rel="shortcut icon" href="<?php bloginfo('url'); ?>/favicon.png?v=0" />
     <?php
         $curUser = wp_get_current_user();
 		if ( $curUser->ID == 0 ){
