@@ -2,201 +2,298 @@
 /* BE SURE TO COMMENT CODE/IDENTIFY PER PLUGIN CALL */
 /* ========================================================================= */
 
-jQuery(function($){
+jQuery(function($) {
 
-    $('#alert .btn-close').on('click',function(){
-        $('#alert').slideUp(150);
-        $.cookie('notify', true, '/', 1);
-    });
-
-    $('#secondarymenu li').on('click',function(e){
-        window.location.href = $('a', this).attr('href');
+    $('.drop').click(function(){
+        $(this).toggleClass('active');
+    })
+    $('.drop li a').click(function(){
+        var ddtext = $(this).text();
+        $(this).closest('.drop').children('span').text(ddtext);
     })
 
-//MOBILE NAV TOGGLE
 
-$('.nav-toggle').click(function(){
-                $('#nav-container').toggleClass('show');
-                $('.mobile').toggleClass( 'icon-menu');
-                $('.mobile').toggleClass('icon-cancel');
+    var ww = document.body.clientWidth;
+    
+    $(document).ready(function() {
+    	$(".nav li a").each(function() {
+    		if ($(this).next().length > 0) {
+    			$(this).addClass("parent");
+    		};
+    	})
+    	
+    	$(".toggleMenu").click(function(e) {
+    		e.preventDefault();
+    		$(this).toggleClass("active");
+    		$(".nav").toggle();
+    	});
+    	adjustMenu();
     });
-
-    $('a.newpost').on('click',function(){
-        $('.bbp-topic-form').slideToggle(200);
-        if($(this).text() == 'Start New Topic'){
-            $(this).text('Cancel');
-        }else{
-            $(this).text('Start New Topic');
-        }
-        $('html,body').animate({
-            scrollTop: $(this).offset().top - 50
-        },200);
-        return false;
-    })
-
-    $('.postreply .replybtn').on('click',function(e){
-        e.preventDefault();
-        $('html,body').animate({
-            scrollTop: $('#new-post').offset().top
-        },200);
-        return false;
+    
+    $(".lb-yt").colorbox({
+        iframe:true, 
+        innerWidth:640, 
+        innerHeight:390
     });
-
-    $('.comcontent .replies:first').each(function(){
-        if($('p:first',this).text() == $('.intro p:first').text()){
-            $(this).hide();
-        }
-    })
-
-    if($('#chgpass').length){
-        $.magnificPopup.open({
-            items:{
-                src: '#chgpass',
-                type: 'inline'
-            },
-            closeOnBgClick: false,
-            enableEscapeKey: false,
-            showCloseBtn: false
-        })
+    
+    $(window).bind('resize orientationchange', function() {
+    	ww = document.body.clientWidth;
+    	adjustMenu();
+    });
+    
+    var adjustMenu = function() {
+    	if (ww < 768) {
+    		$(".toggleMenu").css("display", "inline-block");
+    		if (!$(".toggleMenu").hasClass("active")) {
+    			$(".nav").hide();
+    		} else {
+    			$(".nav").show();
+    		}
+    		$(".nav li").unbind('mouseenter mouseleave');
+    		$(".nav li a.parent").unbind('click').bind('click', function(e) {
+    			// must be attached to anchor element to prevent bubbling
+    			e.preventDefault();
+    			$(this).parent("li").toggleClass("hover");
+    		});
+    	} 
+    	else if (ww >= 768) {
+    		$(".toggleMenu").css("display", "none");
+    		$(".nav").show();
+    		$(".nav li").removeClass("hover");
+    		$(".nav li a").unbind('click');
+    		$(".nav li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
+    		 	$(this).toggleClass('hover');
+    		});
+    	}
     }
 
-    $(document).on('click', '#loader a', function(e)  {
+    var $searchBox = $('#search .search-box');
+    var $searchTrigger = $('#search-trigger');
+
+    $searchTrigger.on('click', function(e) {
+        $searchBox.toggle();
         e.preventDefault();
-       // $('.text_holder').append("<div class=\"loader\">&nbsp;</div>");
-        var link = jQuery(this).attr('href');
-
-        var $content = '.wrap.employees';
-        $($content).animate({
-            opacity: 0.3
-        },150);
-        $.get(link+'', function(data){
-            var $elements = $('<div>').append(data);
-            var $new_content = $elements.find($content).wrapInner('').html(); // Grab just the content
-            $($content).html($new_content); // Append the new content
-
-        }).done(function(data){
-            $($content).animate({
-                opacity: 1
-            },50);
-        });
-        return false;
+    });
+    $(".search-nav-button").click(function() {
+        $(this).toggleClass("color");
     });
 
+    $("#owl-demo").owlCarousel({
+
+        navigation: true,
+        slideSpeed: 200,
+        paginationSpeed: 400,
+        singleItem: true,
+        autoPlay: true,
+        responsiveRefreshRate: 0,
+        dragBeforeAnimFinish: true,
+        mouseDrag: true,
+        touchDrag: true,
+        pagination: true,
+        navigation: false,
+
+        // "singleItem:true" is a shortcut for:
+        // items : 1, 
+        // itemsDesktop : false,
+        // itemsDesktopSmall : false,
+        // itemsTablet: false,
+        // itemsMobile : false
+
+    });
+    $("#owl-demo2").owlCarousel({
+
+        navigation: true,
+        slideSpeed: 200,
+        paginationSpeed: 400,
+        singleItem: true,
+        autoPlay: true,
+        responsiveRefreshRate: 0,
+        dragBeforeAnimFinish: true,
+        mouseDrag: true,
+        touchDrag: true,
+        pagination: false,
+        navigation: false,
+
+        // "singleItem:true" is a shortcut for:
+        // items : 1, 
+        // itemsDesktop : false,
+        // itemsDesktopSmall : false,
+        // itemsTablet: false,
+        // itemsMobile : false
+
+    });
+    $("#owl-demo3").owlCarousel({
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+        items: 4,
+        itemsDesktop: [1199, 4],
+        itemsDesktopSmall: [979, 3],
+        mob: [767, 1],
+    });
+    $("#owl-demo4").owlCarousel({
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+        items: 1,
+        itemsMobile: false,
+        autoHeight: true,
+    });
+
+    function DropDown(el) {
+        this.dd = el;
+        this.placeholder = this.dd.children('span');
+        this.opts = this.dd.find('ul.dropdown > li');
+        this.val = '';
+        this.index = -1;
+        this.initEvents();
+    }
+    DropDown.prototype = {
+        initEvents: function() {
+            var obj = this;
+
+            obj.dd.on('click', function(event) {
+                $(this).toggleClass('active');
+                return false;
+            });
+
+            obj.opts.on('click', function() {
+                var opt = $(this);
+                obj.val = opt.text();
+                obj.index = opt.index();
+                obj.placeholder.text(obj.val);
+            });
+        },
+        getValue: function() {
+            return this.val;
+        },
+        getIndex: function() {
+            return this.index;
+        }
+    }
+
+    $(function() {
+
+        var dd = new DropDown($('#dd'));
+
+        $(document).click(function() {
+            // all dropdowns
+            //$('#dd .wrapper-dropdown-3').removeClass('active');
+        });
+
+    });
+    
+    $.fn.isOnScreen = function(){
+        var win = $(window);
+        var viewport = {
+            top : win.scrollTop()
+        };
+        viewport.bottom = viewport.top + win.height();
+        var bounds = this.offset();
+        bounds.bottom = bounds.top + this.outerHeight();
+        return (!(viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+    };
+    
     /* Ajax load more Pagination */
-    $(document).on('click', '.em-calendar .month_name a', function(e)  {
-        e.preventDefault();
-       // $('.text_holder').append("<div class=\"loader\">&nbsp;</div>");
-        var link = jQuery(this).attr('href');
-
-        var $content = '.em-calendar';
-        $('.em-calendar').animate({
-            opacity: 0.3
-        },150).after('<div class="loader"></div>');
-        $.get(link+'', function(data){
-            var $elements = $('<div>').append(data);
-            var $new_content = $elements.find($content).wrapInner('').html(); // Grab just the content
-            $($content).html($new_content); // Append the new content
-
-        }).done(function(data){
-            $('.em-calendar').animate({
-                opacity: 1
-            },50).siblings('.loader').remove();
-        });
-    });
-
-    //uses classList, setAttribute, and querySelectorAll
-    //if you want this to work in IE8/9 youll need to polyfill these
-    (function(){
-        var d = document,
-        accordionToggles = d.querySelectorAll('.js-accordionTrigger'),
-        setAria,
-        setAccordionAria,
-        switchAccordion,
-      touchSupported = ('ontouchstart' in window),
-      pointerSupported = ('pointerdown' in window);
-
-      skipClickDelay = function(e){
-        e.preventDefault();
-        e.target.click();
-      }
-
-            setAriaAttr = function(el, ariaType, newProperty){
-            el.setAttribute(ariaType, newProperty);
-        };
-        setAccordionAria = function(el1, el2, expanded){
-            switch(expanded) {
-          case "true":
-            setAriaAttr(el1, 'aria-expanded', 'true');
-            setAriaAttr(el2, 'aria-hidden', 'false');
-            break;
-          case "false":
-            setAriaAttr(el1, 'aria-expanded', 'false');
-            setAriaAttr(el2, 'aria-hidden', 'true');
-            break;
-          default:
-                    break;
+    $.fn.loadMore = function(){
+        if($(this).length > 0){
+            if($(this).isOnScreen() === true){
+                $(this).parent().addClass('loading');
+                var link = jQuery(this).attr('href');
+                var $content = '.query-results';
+                var $nav_wrap = '.load-more';
+                var $anchor = '.load-more a';
+                var $next_href = $($anchor).attr('href'); // Get URL for the next set of posts
+            
+                $.get(link+'', function(data){
+                    var $new_content = $($content, data).wrapInner('').html(); // Grab just the content
+                    $next_href = $($anchor, data).attr('href'); // Get the new href
+                    $('.query-results>div:last-child').after($new_content); // Append the new content
+                    $('.load-more a').attr('href', $next_href); // Change the next URL
+                    var nlink = $('.load-more a').attr('href');
+                    if(nlink == link){ $('.load-more a').remove(); }
+                    
+                }).done(function(data){ 
+                    $('.load-more.loading').removeClass('loading');
+                });
             }
-        };
-    //function
-    switchAccordion = function(e) {
-        e.preventDefault();
-        var thisAnswer = e.target.parentNode.nextElementSibling;
-        var thisQuestion = e.target;
-        if(thisAnswer.classList.contains('is-collapsed')) {
-            setAccordionAria(thisQuestion, thisAnswer, 'true');
-        } else {
-            setAccordionAria(thisQuestion, thisAnswer, 'false');
         }
-        thisQuestion.classList.toggle('is-collapsed');
-        thisQuestion.classList.toggle('is-expanded');
-            thisAnswer.classList.toggle('is-collapsed');
-            thisAnswer.classList.toggle('is-expanded');
-
-        thisAnswer.classList.toggle('animateIn');
-        };
-        for (var i=0,len=accordionToggles.length; i<len; i++) {
-            if(touchSupported) {
-          accordionToggles[i].addEventListener('touchstart', skipClickDelay, false);
+    };
+    
+    $('.load-more a').loadMore();
+    
+    $(document).on('scroll ready', function(){
+        if($('.load-more').hasClass('loading')){}else{
+            $('.load-more a').loadMore();
         }
-        if(pointerSupported){
-          accordionToggles[i].addEventListener('pointerdown', skipClickDelay, false);
+    })
+
+   $('#careers h3').click(function(){
+       $(this).toggleClass('active').siblings('div').slideToggle();
+       $('body,html').animate({
+           scrollTop: $(this).offset().top - 50
+        }, 400)
+   });
+   
+    $('#careers .btn').click(function(){
+        var app = $(this).closest('div').siblings('h3').text();
+        $('.hideme').slideDown().find('.getintouch.apply').find('.gfield.hide').find('input').attr('value',app);
+        setTimeout(function(){
+           $('body,html').animate({
+               scrollTop: $('.hideme').offset().top - 50
+            }, 300)
+        }, 300);
+    })
+    $(document).ready(function(){
+        if($('.twitterfeed').length > 0){
+            $('.twitterfeed').tweet({
+                username: 'SPConsultants',
+                modpath: '/twitter/',
+                count: 1,
+                loading_text: 'loading twitter feed...',
+        		template: '{text}{time}'
+                /* etc... */
+            });
         }
-        accordionToggles[i].addEventListener('click', switchAccordion, false);
-      }
-    })();
-
-    // PARALLAX
-/*
-    $(document).scroll(function(){
-        var nm = $("html").scrollTop();
-        var nw = $("body").scrollTop();
-        var n = (nm > nw ? nm : nw);
-
-        $('#element').css({
-            'webkitTransform' : 'translate3d(0, ' + n + 'px, 0)',
-            'MozTransform'    : 'translate3d(0, ' + n + 'px, 0)',
-            'msTransform'     : 'translateY('     + n + 'px)',
-            'OTransform'      : 'translate3d(0, ' + n + 'px, 0)',
-            'transform'       : 'translate3d(0, ' + n + 'px, 0)',
-        });
-
-        // if transform3d isn't available, use top over background-position
-        //$('#element').css('top', Math.ceil(n/2) + 'px');
-
     });
-*/
+    
+    $.fn.replaceText = function( search, replace, text_only ) {
+        return this.each(function(){
+            var node = this.firstChild,
+                val,
+                new_val,
+                remove = [];
+            if ( node ) {
+                do {
+                    if ( node.nodeType === 3 ) {
+                        val = node.nodeValue;
+                        new_val = val.replace( search, replace );
+                        if ( new_val !== val ) {
+                            if ( !text_only && /</.test( new_val ) ) {
+                                $(node).before( new_val );
+                                remove.push( node );
+                            } else {
+                                node.nodeValue = new_val;
+                            }
+                        }
+                    }
+                } while ( node = node.nextSibling );
+            }
+            remove.length && $(remove).remove();
+        });
+    };
+    
+    $('h2, .main-menu a, .sub-menu a').replaceText( '[SM]', '<sup>SM</sup>' )
 
 
+    //get in touch testing
 
-    /* ====== Twitter API Call =============================================
-        Note: Script Automatically adds <li> before and after template. Don't forget to setup Auth info in /twitter/index.php */
-    /*
-    $('#tweets-loading').tweet({
-        modpath: '/path/to/twitter/', // only needed if twitter folder is not in root
-        username: 'jackrabbits',
-        count: 1,
-		template: '<p>{text}</p><p class="tweetlink">{time}</p>'
-	});
-    */
+    $('.unsub input').change(function(){
+        $('.checkbox input').attr('checked', false);
 
+    })
+
+    $('.checkbox input').change(function(){
+        $('.unsub input').attr('checked', false);
+
+    })
+
+
+    
 });

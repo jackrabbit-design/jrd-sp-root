@@ -28,7 +28,7 @@
 
 		<p><a href="<?php echo get_permalink($pro) ?>"><?php echo get_the_title($pro) ?></a><br/>
 
-		<?php $date = bbp_get_topic_post_date();
+		<?php $date = bbp_get_reply_post_date();
 		$cDate = DateTime::createFromFormat('F j, Y \a\t g:ia',$date);
 		?>
 		Posted on <?php echo $cDate->format('n/j/Y \a\t g:ia') ?>.</p>

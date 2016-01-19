@@ -8,9 +8,17 @@
  */
 
 ?>
-
-<?php $date = bbp_get_topic_post_date();
+<?php $date = bbp_get_reply_post_date();
 $cDate = DateTime::createFromFormat('F j, Y \a\t g:ia',$date);
+if($replies = bbp_get_all_child_ids($post->ID, 'reply')){
+    $reply = $replies[0];
+    $post = get_post($reply);
+    setup_postdata($post);
+    $date = $post->post_modified;
+    $cDate = DateTime::createFromFormat('Y-m-d H:i:s',$date);
+    wp_reset_postdata();
+}
+
 ?>
 
 <tr>

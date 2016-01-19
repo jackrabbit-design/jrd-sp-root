@@ -1,1 +1,0 @@
-$(".nav-toggle").click(function(){$("#nav-container").toggleClass("show")});

@@ -17,10 +17,10 @@ get_header(); the_post();
 		<div id="main">
 			<div class="bgtest">
 				 <div class="wrap clearfix">
-					 <?php $p = get_field('andy_&_steve_post'); $post = get_post($p); setup_postdata($post); ?>
+					 <?php $ASheader = get_field('andy_steve_header'); $p = get_field('andy_&_steve_post'); $post = get_post($p); setup_postdata($post); ?>
 					<div class="previewh1">
 
-						<h3>From Andy &amp; Steve</h3>
+						<h3><?php echo $ASheader ?></h3>
                         <h4><?php the_date(); ?></h4>
                         <h2><?php echo get_the_title(); ?> </h2>
                         <p><?php echo strip_tags(get_the_excerpt()) ?></p>
